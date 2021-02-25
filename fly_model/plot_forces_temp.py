@@ -23,26 +23,27 @@ red = (0.9,0.2,0)
 
 sa = []
 
-f0 = npread('data/fz_ctrl00.csv')
+f0 = npread('temp/fz_00.csv')
 wb = np.arange(f0.shape[0])/100
 
 fp = []
-for i in range(3):
-	fp.append(npread('data/fz_ctrlp{}.csv'.format(i+1)))
+for i in range(1):
+	fp.append(npread('temp/fz_p{}.csv'.format(i+1)))
 
 fn = []
-for i in range(3):
-	fn.append(npread('data/fz_ctrln{}.csv'.format(i+1)))
+for i in range(1):
+	fn.append(npread('temp/fz_n{}.csv'.format(i+1)))
 
 plt.plot(wb,f0, color=gray)
 for i, data in enumerate(fp):
-	plt.plot(wb,data, color=mix(gray,red,0.25*(i+2)))
+	plt.plot(wb,data,'--' , color=mix(gray,red,0.25*(i+2)))
 for i, data in enumerate(fn):
-	plt.plot(wb,data, color=mix(gray,blue,0.25*(i+2)))
+	plt.plot(wb,data,'--' , color=mix(gray,blue,0.25*(i+2)))
 
 plt.gca().spines["right"].set_visible(False)
 plt.gca().spines["top"].set_visible(False)
-plt.legend(["Hovering","_nolegend_","_nolegend_","$-F_z$ mode","_nolegend_","_nolegend_","$+F_z$ mode"], loc=3)
+plt.legend(["Hovering","$-F_z$ mode","$+F_z$ mode"], loc=3)
+# plt.legend(["Hovering","_nolegend_","_nolegend_","$-F_z$ mode","_nolegend_","_nolegend_","$+F_z$ mode"], loc=3)
 plt.xlabel("Time (wingbeats)")
 plt.ylabel("$F_z$ (au)")
 plt.ylim([-15,30])

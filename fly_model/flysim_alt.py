@@ -11,10 +11,10 @@ import modes
 
 class Fly(object):
     
-    def __init__(self, startPos, startOrn, gui=True, apply_forces=True, cmd=(0,0,0,0,0,0)):
+    def __init__(self, startPos, startOrn, gui=True, apply_forces=True, mag=0):
 
         self.i = 0
-        self.cmd = cmd
+        self.mag = mag
 
         self.apply_forces = apply_forces
 
@@ -67,6 +67,8 @@ class Fly(object):
             joint_info = p.getJointInfo(self.flyId, i)
             self.link_dict[joint_info[12].decode('ascii')] = joint_info[0]
             self.joint_dict[joint_info[1].decode('ascii')] = joint_info[0]
+
+        self.init_legendre()
 
         # # Load wing kinematics from file
         # self.wingkin = pd.read_csv(wingkin_file, sep=' ', header=None)
@@ -126,7 +128,7 @@ class Fly(object):
         # target = self.wingkin[i%self.wk_len,:] * np.exp(-pitch_factor)
         # target = target + pitch_shift
 
-        target, target_last = self.calc_legendre(self.i%self.wk_len, cmd=self.cmd) #from legendre model
+        target, target_last = self.calc_legendre(self.i%self.wk_len, mag=self.mag) #from legendre model
 
         # Chirp kinematics if forces are being applied
         if self.apply_forces:
@@ -223,7 +225,7 @@ class Fly(object):
 
         self.forces = np.append(self.forces, net_force[None,:], 0)
         self.torques = np.append(self.torques, net_torque[None,:], 0)
-        self.hinge_state = np.append(self.hinge_state, target.T[None,:], 0)
+        self.hinge_state = np.append(self.hinge_state, target.T, 0)
 
         self.i += 1
     
@@ -262,77 +264,77 @@ class Fly(object):
             x_ramp = x
         return x_ramp
 
-    def calc_legendre(self, i, cmd=(0,0,0,0,0,0)):
+    # def calc_legendre(self, i, cmd=(0,0,0,0,0,0)):
 
-        kin = modes.calc_kinematics(self.a, self.X, self.b, cmd)
+    #     kin = modes.calc_kinematics(self.a, self.X, self.b, cmd)
 
-        # Adjust reference frames
-        kin[:,2] -= np.pi/2
-        kin[:,5] -= np.pi/2
-        kin[:,3:5] *= -1
+    #     # Adjust reference frames
+    #     kin[:,2] -= np.pi/2
+    #     kin[:,5] -= np.pi/2
+    #     kin[:,3:5] *= -1
 
-        return kin[i,:], kin[i-1,:]
+    #     return kin[i,:], kin[i-1,:]
 
-    # # Load Legendre wing kinematics model
-    # def init_legendre(self):
+    # Load Legendre wing kinematics model
+    def init_legendre(self):
 
-    #     print("*******************************")
-    #     print("Running legendre initialization")
-    #     print("*******************************")
+        print("*******************************")
+        print("Running legendre initialization")
+        print("*******************************")
 
-    #     # Import model coefficients
-    #     conversion_matrices = [
-    #         "X_theta",
-    #         "X_eta",
-    #         "X_phi"
-    #     ]
-    #     for matrix in conversion_matrices:
-    #         self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
+        # Import model coefficients
+        conversion_matrices = [
+            "X_theta",
+            "X_eta",
+            "X_phi"
+        ]
+        for matrix in conversion_matrices:
+            self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
 
-    #     hover_matrices = [
-    #         "a_theta",
-    #         "a_eta",
-    #         "a_phi"
-    #     ]
-    #     for matrix in hover_matrices:
-    #         self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
+        hover_matrices = [
+            "a_theta",
+            "a_eta",
+            "a_phi"
+        ]
+        for matrix in hover_matrices:
+            self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
 
-    #     control_matrices = [
-    #         "b_FzU_theta",
-    #         "b_FzU_eta",
-    #         "b_FzU_phi"
-    #     ]
-    #     for matrix in control_matrices:
-    #         self.legendre[matrix] = npread('legendre/forces/{}.csv'.format(matrix))
+        control_matrices = [
+            "b_FzU_theta",
+            "b_FzU_eta",
+            "b_FzU_phi"
+        ]
+        for matrix in control_matrices:
+            self.legendre[matrix] = npread('legendre/forces/{}.csv'.format(matrix))
 
-    # def calc_legendre(self, i, mag=0):
+    def calc_legendre(self, i, mag=0):
 
-    #     # Kinematic time course y is calculated via y = X*(a+bx)
-    #         #	X = conversion matrix from Legendre coeffs to kinematics (mxn)
-    #         #	a = Legendre coeffs for hover flight (nx1)
-    #         #	b = Legendre coeffs for control mode (nx1)
-    #         #	x = magnitude of control mode (scalar)
+        # Kinematic time course y is calculated via y = X*(a+bx)
+            #	X = conversion matrix from Legendre coeffs to kinematics (mxn)
+            #	a = Legendre coeffs for hover flight (nx1)
+            #	b = Legendre coeffs for control mode (nx1)
+            #	x = magnitude of control mode (scalar)
         
-    #     posL = self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
-    #     devL = self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
-    #     rotL = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
-    #     posR = -self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
-    #     devR = -self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
-    #     rotR = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
+        posL = self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
+        devL = self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
+        rotL = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
+        posR = -self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
+        devR = -self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
+        rotR = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
 
-    #     # wingkin = np.hstack((
-    #     #     self.legendre["X_phi"].dot(self.legendre["a_phi"]),
-    #     #     self.legendre["X_theta"].dot(self.legendre["a_theta"]),
-    #     #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2,
-    #     #     -self.legendre["X_phi"].dot(self.legendre["a_phi"]),
-    #     #     -self.legendre["X_theta"].dot(self.legendre["a_theta"]),
-    #     #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2
-    #     # ))
+        # wingkin = np.hstack((
+        #     self.legendre["X_phi"].dot(self.legendre["a_phi"]),
+        #     self.legendre["X_theta"].dot(self.legendre["a_theta"]),
+        #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2,
+        #     -self.legendre["X_phi"].dot(self.legendre["a_phi"]),
+        #     -self.legendre["X_theta"].dot(self.legendre["a_theta"]),
+        #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2
+        # ))
 
-    #     wk = np.array([posL[i], devL[i], rotL[i], posR[i], devR[i], rotR[i]])
-    #     wk_last = np.array([posL[i-1], devL[i-1], rotL[i-1], posR[i-1], devR[i-1], rotR[i-1]])
+        wk = np.array([posL[i], devL[i], rotL[i], posR[i], devR[i], rotR[i]])
+        wk_last = np.array([posL[i-1], devL[i-1], rotL[i-1], posR[i-1], devR[i-1], rotR[i-1]])
 
-    #     return wk, wk_last
+        return wk, wk_last
 
     def __del__(self):
 
@@ -352,12 +354,12 @@ if __name__ == "__main__":
 
     flyStartPos = [0,0,4]
     flyStartOrn = p.getQuaternionFromEuler([0,0,0])
-    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=False, cmd=[0e-5])
+    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=False, mag=-1e-5)
     for i in range(200):
         fly.step_simulation()
 
     f = fly.forces[:,2]
-    npwrite(f,'temp/fz_00.csv')
+    npwrite(f,'temp/fz_n1.csv')
 
     wb = np.arange(fly.forces.shape[0])/100
 
