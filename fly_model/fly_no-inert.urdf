@@ -1,0 +1,158 @@
+<robot name="fly">
+
+
+	<!-- ----------------------------------------------------------------------- -->
+	<!-- Static body segments -->
+
+	<link name="thorax">
+		<visual>
+			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://thorax.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://thorax.dae"/>
+			</geometry>
+		</collision>
+	</link>
+	
+	<link name="head">
+		<visual>
+			<geometry>
+				<mesh filename="head.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="head.dae"/>
+			</geometry>
+		</collision>
+	</link>
+	
+	<link name="abdomen">
+		<visual>
+			<geometry>
+				<mesh filename="abdomen.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="abdomen.dae"/>
+			</geometry>
+		</collision>
+	</link>
+	
+	<joint name="neck" type="fixed">
+		<origin rpy="0 0 0" xyz="0.7 0 0.4"/>
+		<parent link="thorax" />
+		<child link="head" />
+	</joint>
+	
+	<joint name="waist" type="fixed">
+		<origin rpy="0 -1 0" xyz="-0.25 0 -0.2"/>
+		<parent link="thorax" />
+		<child link="abdomen" />
+	</joint>
+	
+	
+	<!-- ----------------------------------------------------------------------- -->
+	<!-- Wings and hinges -->
+	
+	<link name="wingL-joint1" />
+	<link name="wingL-joint2" />
+	
+	<link name="wingL">
+		<visual>
+			<origin rpy="0 -1.57 0" xyz="0 0.1 0"/>
+			<geometry>
+				<mesh filename="wingL.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 -1.57 0" xyz="0 0.1 0"/>
+			<geometry>
+				<mesh filename="wingL.dae"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.01"/>
+			<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+			<!--
+			<origin xyz="0 1.25 0"/>
+			-->
+			<origin xyz="0 0.1 0"/>
+		</inertial>
+	</link>
+	
+	<link name="wingR-joint1" />
+	<link name="wingR-joint2" />
+	
+	<link name="wingR">
+		<visual>
+			<origin rpy="0 -1.57 0" xyz="0 -0.1 0"/>
+			<geometry>
+				<mesh filename="wingR.dae"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0 -1.57 0" xyz="0 -0.1 0"/>
+			<geometry>
+				<mesh filename="wingR.dae"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.01"/>
+			<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+			<!--
+			<origin xyz="0 1.25 0"/>
+			-->
+			<origin xyz="0 -0.1 0"/>
+		</inertial>
+	</link>
+	
+	<joint name="hingeL-pos" type="continuous">
+		<parent link="thorax" />
+		<child link="wingL-joint1" />
+		<origin rpy="0 0 0" xyz="0 0.5 0"/>
+		<axis xyz="0 0 1"/>
+	</joint>
+	
+	<joint name="hingeL-dev" type="continuous">
+		<parent link="wingL-joint1" />
+		<child link="wingL-joint2" />
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	
+	<joint name="hingeL-rot" type="continuous">
+		<parent link="wingL-joint2" />
+		<child link="wingL" />
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<axis xyz="0 1 0"/>
+	</joint>
+	
+	<joint name="hingeR-pos" type="continuous">
+		<origin rpy="0 0 0" xyz="0 -0.5 0"/>
+		<parent link="thorax" />
+		<child link="wingR-joint1" />
+		<axis xyz="0 0 1"/>
+	</joint>
+	
+	<joint name="hingeR-dev" type="continuous">
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<parent link="wingR-joint1" />
+		<child link="wingR-joint2" />
+		<axis xyz="1 0 0"/>
+	</joint>
+	
+	<joint name="hingeR-rot" type="continuous">
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<parent link="wingR-joint2" />
+		<child link="wingR" />
+		<axis xyz="0 1 0"/>
+	</joint>
+	
+</robot>

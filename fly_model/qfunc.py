@@ -23,20 +23,20 @@ def vec2q(vec):
 def worldPlusQuaternion(bodyId, linkId, q):
     state = p.getLinkState(bodyId, linkId)
     pos, orn = p.multiplyTransforms(
-        state[0],
-        state[1],
+        state[0], # position
+        state[1], # orientation
         [0,0,0],
         q
     )
     return pos, orn
 
-def worldPlusVector(bodyId, linkId, vector):
+def worldPlusVector(bodyId, linkId, plusPos, plusOrn):
     state = p.getLinkState(bodyId, linkId)
     pos, orn = p.multiplyTransforms(
-        state[0],
-        state[1],
-        [0,0,0],
-        vec2q(vector)
+        state[0], # position
+        state[1], # orientation
+        plusPos,
+        vec2q(plusOrn)
     )
     return pos, orn
 

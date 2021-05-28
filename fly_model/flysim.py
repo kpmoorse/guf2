@@ -14,6 +14,8 @@ class Fly(object):
     def __init__(self, startPos, startOrn, gui=True, apply_forces=True, cmd=(0,0,0,0,0,0)):
 
         self.i = 0
+        self.startPos = startPos
+        self.startOrn = startOrn
         self.cmd = cmd
 
         self.apply_forces = apply_forces
@@ -24,39 +26,48 @@ class Fly(object):
         self.forces = np.empty((0,3)) # Fx, Fy, Fz
         self.torques = np.empty((0,3)) # Tx, Ty, Tz
 
-        self.legendre = {}
-        # self.init_legendre()
+        self.aoa = [0,0] # Angle of attack [left, right]
+        self.aoa_dot = [0,0] # Rate of change of aoa
 
-        # Initialize physics and scene
+        # Initialize physics
         if gui:
-            self.physicsClient = p.connect(p.GUI) # or p.DIRECT for non-graphical version
+            self.physicsClient = p.connect(p.GUI)
         else:
             self.physicsClient = p.connect(p.DIRECT)
         p.configureDebugVisualizer(p.COV_ENABLE_GUI,0) # remove overlay
-        self.dt = 1./120. # seconds
-        # self.dt = self.dt/4
+        # self.dt = 1./1200. # seconds
+        self.dt = 1./1440. # seconds
         p.setTimeStep(self.dt)
 
+        # Initialize scene
         p.setAdditionalSearchPath(pybullet_data.getDataPath()) #optionally
-        p.resetDebugVisualizerCamera(6,50,-35,[0,0,2])
+        p.resetDebugVisualizerCamera(4.5,30,-20,[0,0,3])
+        # p.resetDebugVisualizerCamera(4.5,90,-80,[0,0,3])
         if self.apply_forces:
-            p.setGravity(0,0,-0.5)
+            p.setGravity(0,0,-12)
         else:
             p.setGravity(0,0,0)
         self.planeId = p.loadURDF("plane.urdf")
 
         # Load fly model
-        
-        # flyId = p.loadSDF("fly.sdf")[0]
+        # self.flyId = p.loadSDF("fly.sdf")[0]
         self.flyId = p.loadURDF("fly.urdf", startPos, startOrn)
 
-        # Load markers
-        self.mkRedId1 = p.loadURDF("arrow_red.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
-        self.mkGrnId1 = p.loadURDF("arrow_green.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
-        self.mkBluId1 = p.loadURDF("arrow_blue.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
-        self.mkRedId2 = p.loadURDF("arrow_red.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
-        self.mkGrnId2 = p.loadURDF("arrow_green.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
-        self.mkBluId2 = p.loadURDF("arrow_blue.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0]))
+        # Load wing blade element parameters
+        wing_params = npread('wing_params_5.csv')
+        self.N_wbe = wing_params.shape[0]
+        self.wbe_x = wing_params[:,0]
+        self.wbe_tops = wing_params[:,1]
+        self.wbe_bottoms = wing_params[:,2]
+
+        # Initialize markers
+        self.mkL = []
+        self.mkR = []
+        # for i in range(self.N_wbe):
+        #     # self.mkL.append(p.loadURDF("marker_ball.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0])))
+        #     # self.mkR.append(p.loadURDF("marker_ball.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0])))
+        #     self.mkL.append(p.loadURDF("arrow_red.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0])))
+        #     self.mkR.append(p.loadURDF("arrow_red.urdf", [1,0,3], p.getQuaternionFromEuler([0,0,0])))
 
         # Generate link and joint index dictionaries
         num_joints = p.getNumJoints(self.flyId)
@@ -68,27 +79,8 @@ class Fly(object):
             self.link_dict[joint_info[12].decode('ascii')] = joint_info[0]
             self.joint_dict[joint_info[1].decode('ascii')] = joint_info[0]
 
-        # # Load wing kinematics from file
-        # self.wingkin = pd.read_csv(wingkin_file, sep=' ', header=None)
-        # self.wingkin = np.asarray(self.wingkin)
-        # self.wingkin = self.wingkin*np.pi/180  # Convert degrees to radians
-        # self.wingkin = self.wingkin[::2] # Subsample kinematics
-
-        # # Arrange kinematics to describe 6 DOF (3/wing)
-        # position,rotation,deviation = self.wingkin.T
-        # self.wingkin = np.hstack((
-        #     position[:,None], # Left wing
-        #     deviation[:,None],
-        #     rotation[:,None],
-        #     -position[:,None], # Right wing
-        #     -deviation[:,None],
-        #     rotation[:,None]
-        # ))
-
         self.a, self.X, self.b = modes.read_modes()
 
-        # wingkin = wingkin*0
-        # self.wk_len = self.wingkin.shape[0]
         self.wk_len = 100 #from legendre kinematics
 
         # Generate joint index list for arrayed motor control
@@ -116,21 +108,16 @@ class Fly(object):
 
         # mag=0
 
+        p.removeAllUserDebugItems()
+
         net_force = np.zeros(3)
         net_torque = np.zeros(3)
 
-        # pitch_factor = np.array([-0.5,0,0,-.5,0,0])/10
-        # pitch_shift = np.array([-1,0,0,1,0,0])*0.072
-        
-        # target = wingkin[i%wk_len,:]
-        # target = self.wingkin[i%self.wk_len,:] * np.exp(-pitch_factor)
-        # target = target + pitch_shift
-
-        target, target_last = self.calc_legendre(self.i%self.wk_len, cmd=self.cmd) #from legendre model
+        target, target_last = self.calc_legendre(self.i%self.wk_len) #from legendre model
 
         # Chirp kinematics if forces are being applied
         if self.apply_forces:
-            target = self.linramp(self.sim_time, target, 1)
+            target = self.linramp(self.sim_time, target, 100*self.dt)
 
         flip = np.sign(target[0] - target_last[0])
 
@@ -140,82 +127,144 @@ class Fly(object):
             self.motor_list,
             controlMode=p.POSITION_CONTROL,
             targetPositions=target,
-            forces=[50000]*6
+            forces=[1e10]*6
             )
+
+        # Apply stabilizing external torque
+        if self.apply_forces:
+            p.applyExternalTorque(
+                self.flyId,
+                -1,
+                # (0,8.5,0),
+                (0,5,0),
+                p.LINK_FRAME
+                )
 
         ##### Apply quasisteady model to left wing #####
 
         # Draw wing velocity and direction vectors
-        wlVel = p.getLinkState(self.flyId, self.link_dict["wingL"], computeLinkVelocity=1)[6]
-        wing_pos, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingL"], [0,0,1])
+        wlVel_base = p.getLinkState(self.flyId, self.link_dict["wingL"], computeLinkVelocity=1)[6]
+        # wing_pos, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingL"], [0,0,1])
 
-        p.resetBasePositionAndOrientation(self.mkBluId1, wing_pos, vel_orn)
-        p.resetBasePositionAndOrientation(self.mkRedId1, wing_pos, vec2q(wlVel))
-
-        # Calculate angle of attack
-        aoa = qAngle(
-            worldPlusVector(self.flyId,self.link_dict["wingL"],[0,0,1])[1],
-            vec2q(wlVel)
+        # Calculate angle of attack and its derivative
+        aoa_last = self.aoa[0]
+        self.aoa[0] = qAngle(
+            worldPlusVector(self.flyId,self.link_dict["wingL"],[0,0,0],[0,0,1])[1],
+            vec2q(wlVel_base)
         )
+        self.aoa_dot[0] = (self.aoa[0] - aoa_last)/self.dt
 
-        # Apply lift & drag forces
-        span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingL"], [0,1,0])[1])
-        drag = self.calc_drag(aoa, wlVel)
-        lift = self.calc_lift(aoa, wlVel, span, flip)
-        
-        if self.apply_forces and i>0:
-            p.applyExternalForce(
-                self.flyId,
-                self.link_dict["wingL"],
-                lift+drag,
-                p.getLinkState(self.flyId, self.link_dict["wingL"])[0],
-                p.WORLD_FRAME
-                )
+        # Calculate center of pressure coefficient
+        xcp = 0.82*abs(self.aoa[0])/np.pi + 0.05
 
-        # Accumulate forces and torques
-        net_force += lift+drag
-        lever = np.array(p.getLinkState(self.flyId, self.link_dict["wingL"])[0]) - np.array(p.getBasePositionAndOrientation(self.flyId)[0])
-        net_torque += np.cross(lever, lift+drag)
+        # Loop over wingblade elements
+        for i in range(self.N_wbe):
+        # for i in range(0):
+
+            wbe_scale = self.wbe_x[i]/0.1
+            wlVel = [a*wbe_scale for a in wlVel_base]
+
+            # Calculate center of pressure relative to wing base
+            cpRel = [0, self.wbe_x[i], (1-xcp)*self.wbe_tops[i] + (xcp)*self.wbe_bottoms[i]]
+
+            # Update reference markers
+            cpAbs, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingL"], cpRel, [0,0,0])
+            # p.resetBasePositionAndOrientation(self.mkL[i], cpAbs, vec2q(wlVel))
+            # p.resetBasePositionAndOrientation(self.mkL[i], cpAbs, normal)
+            # p.addUserDebugLine(
+            #     cpAbs,
+            #     np.array(cpAbs)+np.array(wlVel),
+            #     lineColorRGB=[1,0,0],
+            #     lineWidth=3,
+            #     lifeTime=0.1
+            #     )
+
+            # Apply lift & drag forces
+            span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingL"],[0,0,0],[0,1,0])[1])
+            normal = q2vec(p.getLinkState(self.flyId, self.link_dict["wingL"])[1])
+            
+            drag = self.calc_drag(self.aoa[0], wlVel)
+            lift = self.calc_lift(self.aoa[0], wlVel, span, flip)
+            frot = self.calc_frot(self.aoa_dot[0], wlVel, normal, flip)
+            # print((self.apply_forces, i))
+            if self.apply_forces and self.i>10:
+                net_force = lift+drag+frot
+                # if i == self.N_wbe-1:
+                #     net_force *= 0.0
+                p.applyExternalForce(
+                    self.flyId,
+                    self.link_dict["wingL"],
+                    net_force,
+                    cpAbs,
+                    p.WORLD_FRAME
+                    )
+
+            # Accumulate forces and torques
+            net_force += lift+drag
+            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]))
+            net_torque += np.cross(lever, lift+drag)
         
-        p.resetBasePositionAndOrientation(self.mkGrnId1, wing_pos, vec2q(lift+drag))
+        # p.resetBasePositionAndOrientation(self.mkGrnId1, wing_pos, vec2q(lift+drag))
 
         ##### Apply quasisteady model to right wing #####
 
         # Draw wing velocity and direction vectors
-        wlVel = p.getLinkState(self.flyId, self.link_dict["wingR"], computeLinkVelocity=1)[6]
-        wing_pos, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingR"], [0,0,1])
+        wlVel_base = p.getLinkState(self.flyId, self.link_dict["wingR"], computeLinkVelocity=1)[6]
+        # wing_pos, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingR"], [0,0,0], [0,0,1])
 
-        p.resetBasePositionAndOrientation(self.mkBluId2, wing_pos, vel_orn)
-        p.resetBasePositionAndOrientation(self.mkRedId2, wing_pos, vec2q(wlVel))
-
-        # Calculate angle of attack
-        aoa = qAngle(
-            worldPlusVector(self.flyId,self.link_dict["wingR"],[0,0,1])[1],
-            vec2q(wlVel)
+        # Calculate angle of attack and its derivative
+        aoa_last = self.aoa[1]
+        self.aoa[1] = qAngle(
+            worldPlusVector(self.flyId,self.link_dict["wingR"],[0,0,0],[0,0,1])[1],
+            vec2q(wlVel_base)
         )
+        self.aoa_dot[0] = (self.aoa[0] - aoa_last)/self.dt
 
-        # Apply lift & drag forces
-        span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingR"], [0,1,0])[1])
-        drag = self.calc_drag(aoa, wlVel)
-        lift = self.calc_lift(aoa, wlVel, span, flip)
-        # if i%10==0:
-        #     print(lift)
-        # if not init:
-        if self.apply_forces and i>0:
-            p.applyExternalForce(
-                self.flyId,
-                self.link_dict["wingR"],
-                lift+drag,
-                p.getLinkState(self.flyId, self.link_dict["wingR"])[0],
-                p.WORLD_FRAME
-                )
+        xcp = 0.82*abs(self.aoa[1])/np.pi + 0.05
 
-        net_force += lift+drag
-        
-        lever = np.array(p.getLinkState(self.flyId, self.link_dict["wingR"])[0]) - np.array(p.getBasePositionAndOrientation(self.flyId)[0])
-        net_torque += np.cross(lever, lift+drag)
+        # Loop over wingblade elements
+        for i in range(self.N_wbe):
 
-        p.resetBasePositionAndOrientation(self.mkGrnId2, wing_pos, vec2q(lift+drag))
+            wbe_scale = self.wbe_x[i]/0.1
+            wlVel = [a*wbe_scale for a in wlVel_base]
+
+            # Calculate center of pressure relative to wing base
+            cpRel = [0, -self.wbe_x[i], (1-xcp)*self.wbe_tops[i] + (xcp)*self.wbe_bottoms[i]]
+
+             # Update reference markers
+            cpAbs, vel_orn = worldPlusVector(self.flyId, self.link_dict["wingR"], cpRel, [0,0,0])
+            # p.resetBasePositionAndOrientation(self.mkR[i], cpAbs, vec2q(wlVel))
+            # p.addUserDebugLine(
+            #     cpAbs,
+            #     np.array(cpAbs)-np.array(wlVel),
+            #     lineColorRGB=[1,0,0],
+            #     lineWidth=3
+            #     )
+
+            # Apply lift & drag forces
+            span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingR"], [0,0,0], [0,1,0])[1])
+            normal = q2vec(p.getLinkState(self.flyId, self.link_dict["wingR"])[1])
+            
+            drag = self.calc_drag(self.aoa[1], wlVel)
+            lift = self.calc_lift(self.aoa[1], wlVel, span, flip)
+            frot = self.calc_frot(self.aoa_dot[1], wlVel, normal, flip)
+            # if i%10==0:
+            #     print(lift)
+            # if not init:
+            if self.apply_forces and self.i>10:
+                p.applyExternalForce(
+                    self.flyId,
+                    self.link_dict["wingR"],
+                    lift+drag+frot,
+                    cpAbs,
+                    p.WORLD_FRAME
+                    )
+
+            net_force += lift+drag
+            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]))
+            net_torque += np.cross(lever, lift+drag)
+
+        # p.resetBasePositionAndOrientation(self.mkGrnId2, wing_pos, vec2q(lift+drag))
 
         p.stepSimulation()
         self.sim_time += self.dt
@@ -233,6 +282,7 @@ class Fly(object):
             # print(link)
             pass
 
+    # Calculate drag force from quasisteady model
     @staticmethod
     def calc_drag(aoa, vel):
         vel = np.array(vel)
@@ -243,16 +293,27 @@ class Fly(object):
             ang = vel
 
         cD = 1.464 * np.sin(0.0342*aoa - 1.667) + 2.008
-        drag = -cD * vel * np.linalg.norm(vel) * 0.5
+        drag = -cD * vel * np.linalg.norm(vel) * 0.01
         return drag
 
+    # Calculate lift force from quasisteady model
     @staticmethod
     def calc_lift(aoa, vel, span, flip=1):
         vel = np.array(vel)
 
         cL = 1.597 * np.sin(0.0407*aoa - 0.369) + 0.317
-        lift = cL * np.cross(vel, flip*span) * np.linalg.norm(vel) * 0.5
+        lift = cL * np.cross(vel, flip*span) * np.linalg.norm(vel) * 0.01
         return(lift)
+
+    # Calculate rotational force from quasisteady model
+    @staticmethod
+    def calc_frot(aoa_dot, vel, normal, flip):
+        vel = np.array(vel)
+
+        cR = 1.55
+        frot = cR * aoa_dot * np.linalg.norm(vel) * normal * 0.001
+
+        return frot
 
     @staticmethod
     def linramp(t,x,tc):
@@ -262,9 +323,9 @@ class Fly(object):
             x_ramp = x
         return x_ramp
 
-    def calc_legendre(self, i, cmd=(0,0,0,0,0,0)):
+    def calc_legendre(self, i):
 
-        kin = modes.calc_kinematics(self.a, self.X, self.b, cmd)
+        kin = modes.calc_kinematics(self.a, self.X, self.b, self.cmd)
 
         # Adjust reference frames
         kin[:,2] -= np.pi/2
@@ -273,66 +334,12 @@ class Fly(object):
 
         return kin[i,:], kin[i-1,:]
 
-    # # Load Legendre wing kinematics model
-    # def init_legendre(self):
+    def reset(self):
 
-    #     print("*******************************")
-    #     print("Running legendre initialization")
-    #     print("*******************************")
-
-    #     # Import model coefficients
-    #     conversion_matrices = [
-    #         "X_theta",
-    #         "X_eta",
-    #         "X_phi"
-    #     ]
-    #     for matrix in conversion_matrices:
-    #         self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
-
-    #     hover_matrices = [
-    #         "a_theta",
-    #         "a_eta",
-    #         "a_phi"
-    #     ]
-    #     for matrix in hover_matrices:
-    #         self.legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
-
-    #     control_matrices = [
-    #         "b_FzU_theta",
-    #         "b_FzU_eta",
-    #         "b_FzU_phi"
-    #     ]
-    #     for matrix in control_matrices:
-    #         self.legendre[matrix] = npread('legendre/forces/{}.csv'.format(matrix))
-
-    # def calc_legendre(self, i, mag=0):
-
-    #     # Kinematic time course y is calculated via y = X*(a+bx)
-    #         #	X = conversion matrix from Legendre coeffs to kinematics (mxn)
-    #         #	a = Legendre coeffs for hover flight (nx1)
-    #         #	b = Legendre coeffs for control mode (nx1)
-    #         #	x = magnitude of control mode (scalar)
-        
-    #     posL = self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
-    #     devL = self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
-    #     rotL = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
-    #     posR = -self.legendre["X_phi"].dot(self.legendre["a_phi"]+mag*self.legendre["b_FzU_phi"])
-    #     devR = -self.legendre["X_theta"].dot(self.legendre["a_theta"]+mag*self.legendre["b_FzU_theta"])
-    #     rotR = self.legendre["X_eta"].dot(self.legendre["a_eta"]+mag*self.legendre["b_FzU_eta"])-np.pi/2
-
-    #     # wingkin = np.hstack((
-    #     #     self.legendre["X_phi"].dot(self.legendre["a_phi"]),
-    #     #     self.legendre["X_theta"].dot(self.legendre["a_theta"]),
-    #     #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2,
-    #     #     -self.legendre["X_phi"].dot(self.legendre["a_phi"]),
-    #     #     -self.legendre["X_theta"].dot(self.legendre["a_theta"]),
-    #     #     self.legendre["X_eta"].dot(self.legendre["a_eta"])-np.pi/2
-    #     # ))
-
-    #     wk = np.array([posL[i], devL[i], rotL[i], posR[i], devR[i], rotR[i]])
-    #     wk_last = np.array([posL[i-1], devL[i-1], rotL[i-1], posR[i-1], devR[i-1], rotR[i-1]])
-
-    #     return wk, wk_last
+        p.resetBasePositionAndOrientation(self.flyId, self.startPos, self.startOrn)
+        self.forces = np.empty((0,3)) # Fx, Fy, Fz
+        self.torques = np.empty((0,3)) # Tx, Ty, Tz
+        self.i = 0
 
     def __del__(self):
 
@@ -350,58 +357,28 @@ def npwrite(arr, file):
 
 if __name__ == "__main__":
 
+    mag = -2
+
     flyStartPos = [0,0,4]
     flyStartOrn = p.getQuaternionFromEuler([0,0,0])
-    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=False, cmd=[0e-5])
-    for i in range(200):
+    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=1, cmd=(0,0,0,0,0,1e-4))
+    aoa = []
+    for i in range(10000):
         fly.step_simulation()
+        # aoa.append(fly.aoa)
 
-    f = fly.forces[:,2]
-    npwrite(f,'temp/fz_00.csv')
+    # plt.plot(aoa)
+    # plt.show()
+    
+    f = fly.torques[:,1]
+
+    if mag != 0:
+        tag = ("n","p")[int(mag>0)] + str(abs(mag))
+    else:
+        tag = "00"
+
+    # npwrite(f,'res_pos/my_{}.csv'.format(tag))
 
     wb = np.arange(fly.forces.shape[0])/100
-
-# Determine forces via quasi-steady model
-def qs_force(bodyId, linkId):
-
-    state = p.getLinkState(bodyId, linkId)
-
-    return state
-
-# data = np.empty([0,3])
-# init = True
-# sim_time = 0
-# # Run simulation
-# for i in range (0,10000,2):
-
-    # test = q2vec(new_orn)
-    # print("test: "+str(test))
-
-    # print(wlVel)
-
-    # state = p.getLinkState(flyId, link_dict["head"], computeLinkVelocity=1)
-    # orn = state[1]
-    # impulse = state[6]
-    # if i%wk_len == 0:
-    #     print(impulse)
-
-#     angularVelocity = p.getBaseVelocity(flyId)[1]
-#     if i%wk_len == 0:
-#         print(np.array([angularVelocity]))
-#         data = np.append(data, np.array([angularVelocity]), 0)
-
-
-#     if init and i>50: init=False
-
-    
-#     # time.sleep(1./240.)
-
-# print(data)
-# with open('stroke_impulse.csv', mode='w') as file:
-#     writer = csv.writer(file)
-#     for row in data:
-#         writer.writerow(row)
-
-# flyPos, flyOrn = p.getBasePositionAndOrientation(flyId)
-# print(flyPos,flyOrn)
-
+    # plt.plot(wb,f)
+    # plt.show()

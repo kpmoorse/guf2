@@ -22,31 +22,56 @@ blue = (0,0.5,0.9)
 red = (0.9,0.2,0)
 
 sa = []
+res = []
+mode = "my"
 
-f0 = npread('temp/fz_00.csv')
-wb = np.arange(f0.shape[0])/100
+for j, folder in enumerate(['res_neg','res_pos']):
 
-fp = []
-for i in range(1):
-	fp.append(npread('temp/fz_p{}.csv'.format(i+1)))
+	f0 = npread('{}/{}_00.csv'.format(folder, mode))
+	wb = np.arange(f0.shape[0])/100
 
-fn = []
-for i in range(1):
-	fn.append(npread('temp/fz_n{}.csv'.format(i+1)))
+	fp = []
+	for i in range(2):
+		fp.append(npread('{}/{}_p{}.csv'.format(folder,mode,i+1)))
 
-plt.plot(wb,f0, color=gray)
-for i, data in enumerate(fp):
-	plt.plot(wb,data,'--' , color=mix(gray,red,0.25*(i+2)))
-for i, data in enumerate(fn):
-	plt.plot(wb,data,'--' , color=mix(gray,blue,0.25*(i+2)))
+	fn = []
+	for i in range(2):
+		fn.append(npread('{}/{}_n{}.csv'.format(folder,mode,i+1)))
 
-plt.gca().spines["right"].set_visible(False)
-plt.gca().spines["top"].set_visible(False)
-plt.legend(["Hovering","$-F_z$ mode","$+F_z$ mode"], loc=3)
-# plt.legend(["Hovering","_nolegend_","_nolegend_","$-F_z$ mode","_nolegend_","_nolegend_","$+F_z$ mode"], loc=3)
-plt.xlabel("Time (wingbeats)")
-plt.ylabel("$F_z$ (au)")
-plt.ylim([-15,30])
+	# print(np.mean(np.asarray(f0),axis=0))
+
+	print(np.mean(np.asarray(f0)[:,0]))
+
+	res.append(np.hstack(
+		(np.mean(np.asarray(fn),axis=1).T[0][::-1],
+		np.mean(np.asarray(f0),axis=0),
+		np.mean(np.asarray(fp),axis=1).T[0])
+		))
+
+
+	plt.subplot(2,2,(2*j)+1)
+
+	plt.plot(wb,f0, color=gray)
+	for i, data in enumerate(fp):
+		plt.plot(wb,data,'--' , color=mix(gray,blue,0.25*(i+2)))
+	for i, data in enumerate(fn):
+		plt.plot(wb,data,'--' , color=mix(gray,red,0.25*(i+2)))
+
+	plt.gca().spines["right"].set_visible(False)
+	plt.gca().spines["top"].set_visible(False)
+	# plt.legend(["Hovering","Negative coeff","$+F_z$ mode"], loc=3)
+	# plt.legend(["Hovering","_nolegend_","_nolegend_","$-F_z$ mode","_nolegend_","_nolegend_","$+F_z$ mode"], loc=3)
+	plt.xlabel("Time (wingbeats)")
+	plt.ylabel("{} ({})".format(folder, mode))
+	# plt.ylim([-15,30])
+
+plt.subplot(1,2,2)
+plt.plot(np.arange(-2,3)*1e-5, res[0], '.-')
+plt.plot(np.arange(-2,3)*1e-5, res[1], '.-')
+plt.legend(["Negative mode","Positive mode"])
+plt.xlabel("Mode strength")
+# plt.ylabel("Wingbeat-averaged force")
+
 plt.show()
 
 # mag = np.arange(-5,6)

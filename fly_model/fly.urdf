@@ -1,48 +1,72 @@
 <robot name="fly">
 
 
-	<!-- ----------------------------------------------------------------------- -->
+	<!-- ****************************************************************** -->
 	<!-- Static body segments -->
 
 	<link name="thorax">
+	
 		<visual>
 			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
 			<geometry>
 				<mesh filename="package://thorax.dae"/>
 			</geometry>
 		</visual>
+		
 		<collision>
 			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
 			<geometry>
 				<mesh filename="package://thorax.dae"/>
 			</geometry>
 		</collision>
+		
+		<inertial>
+		<mass value="1"/>
+			<inertia  ixx="0.2624093029354822" ixy="0" ixz="0" iyy="0.24834119831182733" iyz="0" izz="0.2018393163490953" />
+		</inertial>
+		
 	</link>
 	
 	<link name="head">
+	
 		<visual>
 			<geometry>
 				<mesh filename="head.dae"/>
 			</geometry>
 		</visual>
+		
 		<collision>
 			<geometry>
 				<mesh filename="head.dae"/>
 			</geometry>
 		</collision>
+		
+		<inertial>
+		<mass value="1"/>
+			<inertia  ixx="0.09775066756147528" ixy="0" ixz="0" iyy="0.07579974635300837" iyz="0" izz="0.07169360825107181" />
+		</inertial>
+		
 	</link>
 	
 	<link name="abdomen">
+	
 		<visual>
 			<geometry>
 				<mesh filename="abdomen.dae"/>
 			</geometry>
 		</visual>
+		
 		<collision>
 			<geometry>
 				<mesh filename="abdomen.dae"/>
 			</geometry>
 		</collision>
+		
+		<inertial>
+		<mass value="1"/>
+			<inertia  ixx="0.14705677251428165" ixy="0" ixz="0" iyy="0.2682500526876256" iyz="0" izz="0.2702582919816644" />
+		</inertial>
+		
 	</link>
 	
 	<joint name="neck" type="fixed">
@@ -58,53 +82,67 @@
 	</joint>
 	
 	
-	<!-- ----------------------------------------------------------------------- -->
+	<!-- ****************************************************************** -->
 	<!-- Wings and hinges -->
 	
 	<link name="wingL-joint1" />
 	<link name="wingL-joint2" />
 	
 	<link name="wingL">
+	
 		<visual>
 			<origin rpy="0 -1.57 0" xyz="0 0.1 0"/>
 			<geometry>
 				<mesh filename="wingL.dae"/>
 			</geometry>
 		</visual>
+		
 		<collision>
 			<origin rpy="0 -1.57 0" xyz="0 0.1 0"/>
 			<geometry>
 				<mesh filename="wingL.dae"/>
 			</geometry>
 		</collision>
+		
 		<inertial>
 			<mass value="0.01"/>
-			<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+			<inertia  ixx="0.004100527686064244" ixy="0" ixz="0" iyy="0.0007656738107781564" iyz="0" izz="0.0048662014968424" />
+			<!--
 			<origin xyz="0 1.25 0"/>
+			-->
+			<origin xyz="0 0.1 0"/>
 		</inertial>
+		
 	</link>
 	
 	<link name="wingR-joint1" />
 	<link name="wingR-joint2" />
 	
 	<link name="wingR">
+	
 		<visual>
 			<origin rpy="0 -1.57 0" xyz="0 -0.1 0"/>
 			<geometry>
 				<mesh filename="wingR.dae"/>
 			</geometry>
 		</visual>
+		
 		<collision>
 			<origin rpy="0 -1.57 0" xyz="0 -0.1 0"/>
 			<geometry>
 				<mesh filename="wingR.dae"/>
 			</geometry>
 		</collision>
+		
 		<inertial>
 			<mass value="0.01"/>
-			<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
-			<origin xyz="0 -1.25 0"/>
+			<inertia  ixx="0.004100527686064244" ixy="0" ixz="0" iyy="0.0007656738107781564" iyz="0" izz="0.0048662014968424" />
+			<!--
+			<origin xyz="0 1.25 0"/>
+			-->
+			<origin xyz="0 -0.1 0"/>
 		</inertial>
+		
 	</link>
 	
 	<joint name="hingeL-pos" type="continuous">
@@ -147,6 +185,29 @@
 		<parent link="wingR-joint2" />
 		<child link="wingR" />
 		<axis xyz="0 1 0"/>
+	</joint>
+	
+	<link name="zcog_offset">
+	
+		<visual>
+			<geometry>
+				<sphere radius="0.2"/>
+			</geometry>
+			<origin xyz="0 0 1"/>
+		</visual>
+		
+		<inertial>
+			<mass value="0.01"/>
+			<inertia  ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+			<origin xyz="0 0 0"/>
+		</inertial>
+	
+	</link>
+	
+	<joint name="zcog_offset_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<parent link="thorax" />
+		<child link="zcog_offset" />
 	</joint>
 	
 </robot>

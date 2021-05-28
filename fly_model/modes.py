@@ -40,75 +40,46 @@ def read_modes():
 			b[angle][wing] = {
 
 				# Forces
-				"FxN": npread('legendre/forces/b_FxB_{}.csv'.format(angle)),
+				"FxN": -npread('legendre/forces/b_FxB_{}.csv'.format(angle)),
 				"FxP": npread('legendre/forces/b_FxF_{}.csv'.format(angle)),
-				"FyN": npread('legendre/forces/b_FyR_{}{}.csv'.format(angle, wing)),
-				"FyP": npread('legendre/forces/b_FyL_{}{}.csv'.format(angle, wing)),
+				"FyN": -npread('legendre/forces/b_FyR_{}{}.csv'.format(angle, wing)),
+				"FyP": -npread('legendre/forces/b_FyL_{}{}.csv'.format(angle, wing)),
 				"FzN": npread('legendre/forces/b_FzD_{}.csv'.format(angle)),
-				"FzP": npread('legendre/forces/b_FzU_{}.csv'.format(angle)),
+				"FzP": -npread('legendre/forces/b_FzU_{}.csv'.format(angle)),
+
+				# "FxN": -npread('legendre/forces/b_FxF_{}.csv'.format(angle)),
+				# "FxP": npread('legendre/forces/b_FxF_{}.csv'.format(angle)),
+				# "FyN": npread('legendre/forces/b_FyL_{}{}.csv'.format(angle, wing)),
+				# "FyP": -npread('legendre/forces/b_FyL_{}{}.csv'.format(angle, wing)),
+				# "FzN": npread('legendre/forces/b_FzU_{}.csv'.format(angle)),
+				# "FzP": -npread('legendre/forces/b_FzU_{}.csv'.format(angle)),
 
 				# Torques
 				"MxN": npread('legendre/torques/b_MxL_{}{}.csv'.format(angle, wing)),
 				"MxP": npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
 				"MyN": npread('legendre/torques/b_MyU_{}.csv'.format(angle)),
-				"MyP": npread('legendre/torques/b_MyD_{}.csv'.format(angle)),
-				"MzN": npread('legendre/torques/b_MzR_{}{}.csv'.format(angle, wing)),
-				"MzP": npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing))
+				"MyP": -npread('legendre/torques/b_MyD_{}.csv'.format(angle)),
+				"MzN": npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing)),
+				"MzP": npread('legendre/torques/b_MzR_{}{}.csv'.format(angle, wing))
+
+				# "MxN": -npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
+				# "MxP": npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
+				# "MyN": -npread('legendre/torques/b_MyD_{}.csv'.format(angle)),
+				# "MyP": npread('legendre/torques/b_MyD_{}.csv'.format(angle)),
+				# "MzN": -npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing)),
+				# "MzP": npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing))
 
 			}
 
 	return a, X, b
-
-def init_legendre():
-
-	legendre = {}
-
-	conversion_matrices = [
-		"X_theta",
-		"X_eta",
-		"X_phi"
-	]
-	for matrix in conversion_matrices:
-		legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
-
-	hover_matrices = [
-		"a_theta",
-		"a_eta",
-		"a_phi"
-	]
-	for matrix in hover_matrices:
-		legendre[matrix] = npread('legendre/hover/{}.csv'.format(matrix))
-
-	control_matrices = [
-		"b_FzU_theta",
-		"b_FzU_eta",
-		"b_FzU_phi"
-	]
-	for matrix in control_matrices:
-		legendre[matrix] = npread('legendre/forces/{}.csv'.format(matrix))
-
-	return legendre
-
-def calc_legendre(legendre, mag):
-
-	posL = legendre["X_phi"].dot(legendre["a_phi"]+mag*legendre["b_FzU_phi"])
-	devL = legendre["X_theta"].dot(legendre["a_theta"]+mag*legendre["b_FzU_theta"])
-	rotL = legendre["X_eta"].dot(legendre["a_eta"]+mag*legendre["b_FzU_eta"])
-	posR = legendre["X_phi"].dot(legendre["a_phi"]+mag*legendre["b_FzU_phi"])
-	devR = legendre["X_theta"].dot(legendre["a_theta"]+mag*legendre["b_FzU_theta"])
-	rotR = legendre["X_eta"].dot(legendre["a_eta"]+mag*legendre["b_FzU_eta"])
-
-	kinematics = np.hstack((posL[:,None], devL[:,None], rotL[:,None], posR[:,None], devR[:,None], rotR[:,None]))
-
-	return kinematics
 
 def calc_kinematics(a, X, b, cmd):
 
 	# cmd contains the mode strengths (Fx, Fy, Fz, Mx, My, Mz)
 	# result contains the kinematics (etaL, phiL, thetaL, etaR, phiR, thetaR)
 
-	# modes = ["Fx", "Fy", "Fz", "Mx", "My", "Mz"]
-	modes = ["Fz"]
+	modes = ["Fx", "Fy", "Fz", "Mx", "My", "Mz"]
+	# modes = ["Fz"]
 	kinematics = np.empty((100,0))
 
 	for wing in ["L", "R"]:

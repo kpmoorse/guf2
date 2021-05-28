@@ -3,9 +3,14 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 from stl import mesh
 import scipy.interpolate as spi
+import pandas as pd
 
 def sliding_average(x, N):
 	return np.convolve(x, np.ones((N,))/N, mode='same')
+
+def npwrite(arr, file):
+    df = pd.DataFrame(arr)
+    df.to_csv(file, header=False, index=False)
 
 def get_inliers(arr, thresh):
 
@@ -51,14 +56,47 @@ xb = bottom[:,0]
 yb = bottom[:,1]
 ixb = get_inliers(yb, 0.05)
 
-x_smooth = np.arange(0,np.max(xt),0.0025)
+w = np.max(xt)
+N = 1
+dx = w/N
+
+x_smooth = np.arange(0,w,0.0025)
+x_elem = np.linspace(0,w,N+1)
+
 f_top = spi.interp1d(xt[ixt],yt[ixt],kind="cubic")
 f_bottom = spi.interp1d(xb[ixb],yb[ixb],kind="cubic")
+
+tops = []
+bottoms = []
+for i in range(N):
+
+	tops.append((f_top(x_elem[i]) + f_top(x_elem[i+1]))/2)
+	bottoms.append((f_bottom(x_elem[i]) + f_bottom(x_elem[i+1]))/2)
+
+	# xc = (x_elem[i] + x_elem[i+1])/2
+	# yc = (mp_top + mp_bottom)/2
+	# centers.append([xc,yc])
+
+	# widths.append(mp_top - mp_bottom)
 
 # Plot results
 plt.plot(x_smooth,f_top(x_smooth))
 plt.plot(x_smooth,f_bottom(x_smooth))
+# plt.plot(x_elem, (f_top(x_elem)+f_bottom(x_elem))/2, '.')
+
+for i,(t,b) in enumerate(zip(tops, bottoms)):
+
+	plt.plot([dx*i,dx*(i+1),dx*(i+1),dx*i,dx*i], [t,t,b,b,t], 'k')
+	plt.plot(dx*(i+1/2), (t+b)/2, 'k.')
 
 plt.gca().set_aspect('equal')
+
+# Save results
+res = np.hstack((
+	(np.arange(0,w,dx)+dx/2)[:,None],
+	np.array(tops)[:,None],
+	np.array(bottoms)[:,None]
+))
+# npwrite(res, 'wing_params_{}.csv'.format(N))
 
 plt.show()
