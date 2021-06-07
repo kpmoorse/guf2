@@ -1,0 +1,1390 @@
+Initializing local storage instance
+(electron) Sending uncompressed crash reports is deprecated and will be removed in a future version of Electron. Set { compress: true } to opt-in to the new behavior. Crash reports will be uploaded gzipped, which most crash reporting servers support.
+(node:7566) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `slack --trace-deprecation ...` to show where the warning was created)
+(electron) 'BrowserWindow.getDevToolsExtensions' is deprecated and will be removed. Please use 'session.getAllExtensions' instead.
+[06/07/21, 12:55:06:888] info: 
+╔═══════════════════════════════════════════════════════╗
+║      Slack 4.16.0, linux 5.4.0-74-generic on x64      ║
+╚═══════════════════════════════════════════════════════╝ 
+[06/07/21, 12:55:06:888] info: Configured logger via 
+{
+  "enableConsoleTransport": true,
+  "identifierOverride": "webapp-service-worker-console",
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 2
+}
+[06/07/21, 12:55:06:889] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "timeZone": "America/Los_Angeles",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.16.0",
+  "PACKAGE_MANIFEST.commit": "c22285b",
+  "PACKAGE_MANIFEST.branch": "HEAD"
+}
+[06/07/21, 12:55:06:930] info: Boots up new service worker version 
+{
+  "scriptUrl": "https://app.slack.com/service-worker.js",
+  "scope": "https://app.slack.com/",
+  "renderProcessId": 5,
+  "versionId": 0
+}
+[06/07/21, 12:55:06:931] info: Jun-7 12:55:06.929 [SERVICE-WORKER] normalizing request URL for cache https://app.slack.com/client/T0105PT4A2K 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:06:933] info: Jun-7 12:55:06.931 [SERVICE-WORKER] responding from cache (normalized) /boot/client.html 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:000] info: Jun-7 12:55:07.000 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/slack-icons-v2-daa7aaf.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:000] info: Jun-7 12:55:07.000 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-regular-d9ce515.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:001] info: Jun-7 12:55:07.100 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-black-b64f5e4.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:022] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/slack-kit-styles.66ffa13.css 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:023] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/client-boot-styles.52943f3.css 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:023] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/helper-styles.38e0f5f.css 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:024] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-bold-4b1dc11.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:024] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/gantry-vendors.fe72d70.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:024] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/gantry-shared.2311731.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:024] info: Jun-7 12:55:07.170 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/client-boot.0a0f10f.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:199] info: Jun-7 12:55:07.199 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/gantry-vendors-async.d042969.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:200] info: Jun-7 12:55:07.199 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/gantry-vendors-async-client.44fef2b.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:07:201] info: Jun-7 12:55:07.200 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/client-boot-imports.cff668b.min.js 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:190] info: Jun-7 12:55:08.190 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-italic-black-04aca50.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:192] info: Jun-7 12:55:08.190 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-italic-5bbcd6c.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:395] info: Jun-7 12:55:08.395 [SERVICE-WORKER] responding from cache https://a.slack-edge.com/bv1-9/lato-italic-bold-99def7d.woff2 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:665] info: Jun-7 12:55:08.665 [SERVICE-WORKER] responding from cache https://dickinson-lab-caltech.slack.com/api/api.features?_x_gantry=true&_x_team_id=T0105PT4A2K&platform=sonic&token=[REDACTED] 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:746] info: Jun-7 12:55:08.746 [SERVICE-WORKER] responding from cache https://dickinson-lab-caltech.slack.com/api/experiments.getByUser?_x_gantry=true&_x_user_id=U0103USHQBX&token=[REDACTED] 
+{
+  "versionId": 0
+}
+[06/07/21, 12:55:08:798] info: 
+╔═══════════════════════════════════════════════════════╗
+║      Slack 4.16.0, linux 5.4.0-74-generic on x64      ║
+╚═══════════════════════════════════════════════════════╝ 
+[06/07/21, 12:55:08:799] info: Configured logger via 
+{
+  "enableConsoleTransport": true,
+  "identifierOverride": "webapp-console",
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 3
+}
+[06/07/21, 12:55:08:799] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "timeZone": "America/Los_Angeles",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.16.0",
+  "PACKAGE_MANIFEST.commit": "c22285b",
+  "PACKAGE_MANIFEST.branch": "HEAD"
+}
+[06/07/21, 12:55:08:799] info: Starting Sentry 
+[06/07/21, 12:55:08:800] info: Creating desktop interface object 
+[06/07/21, 12:55:08:800] info: Exposing context bridge 
+[06/07/21, 12:55:08:800] info: Store: WINDOW_CREATED {
+  "type": "main",
+  "id": 1,
+  "frame": {
+    "isHtmlFullScreen": false,
+    "isFullScreen": false,
+    "isMinimized": false,
+    "isMaximized": false,
+    "isVisible": false,
+    "isFocused": false,
+    "bounds": {
+      "x": 482,
+      "y": 170,
+      "width": 1024,
+      "height": 768
+    }
+  }
+} 
+[06/07/21, 12:55:08:800] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 1,
+  "interval": 86
+} 
+[06/07/21, 12:55:08:801] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "unloaded"
+} 
+[06/07/21, 12:55:08:801] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "loaded"
+} 
+[06/07/21, 12:55:08:801] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 2,
+  "interval": 95
+} 
+[06/07/21, 12:55:08:801] info: Store: MAIN_WINDOW_SHOWN  
+[06/07/21, 12:55:08:801] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 482,
+      "y": 170,
+      "width": 1024,
+      "height": 768
+    }
+  }
+} 
+[06/07/21, 12:55:08:801] info: Store: CLEAR_NOTIFICATIONS  
+[06/07/21, 12:55:08:801] info: [METRICS] Starting timers for metrics collection 
+[06/07/21, 12:55:08:802] info: [PERF] setupGantry_w begin 251ms 
+[06/07/21, 12:55:08:802] info: [APP] client 
+[06/07/21, 12:55:08:802] info: [DATE/TIME] 1623095707180 "2021-06-07T19:55:07.180Z" 
+[06/07/21, 12:55:08:802] info: [VERSION] version_hash: d94f5c3f8c50184b65de65482d4f26132a683ec9 
+[06/07/21, 12:55:08:802] info: [VERSION] version_ts: 1623090405 
+[06/07/21, 12:55:08:802] info: [VERSION] min_version_data_ts: 1581290339 
+[06/07/21, 12:55:08:802] info: [AUTH] authCookieChanged: started listening to the event 
+[06/07/21, 12:55:08:803] info: [AUTH] Credentials are fresh (psc=1623095631, csc=1623095631) 
+[06/07/21, 12:55:08:803] info: [LOCAL-CONFIG] ingestIncomingConfig(): no incoming payload to process; current teams: T0105PT4A2K:U0103USHQBX 
+[06/07/21, 12:55:08:803] info: [BOOT] Initial team ID: T0105PT4A2K 
+[06/07/21, 12:55:08:803] info: [PERF] setupGantry_w took 5.3ms 
+[06/07/21, 12:55:08:803] info: [PERF] bootClient_w begin 259ms 
+[06/07/21, 12:55:08:803] info: [BOOT] (T0105PT4A2K) Initializing boot 
+[06/07/21, 12:55:08:803] info: [BOOT] (T0105PT4A2K) Minimum supported data version is 1581290339; currently on 1623090405 
+[06/07/21, 12:55:08:803] info: [PERSIST] (T0105PT4A2K) Getting state from IndexedDB 
+[06/07/21, 12:55:08:804] info: [PERSIST] (T0105PT4A2K) Successfully got state from IndexedDB 
+[06/07/21, 12:55:08:804] info: [BOOT] (T0105PT4A2K) Booting with persisted store 
+[06/07/21, 12:55:08:804] info: [TRACER] Tracing is not sampled by default for this session. 
+[06/07/21, 12:55:08:804] info: [EMOJI_TRANSLATION] Emoji translations not needed for default locale, only adding keywords 
+[06/07/21, 12:55:08:804] info: [PERSIST] (T0105PT4A2K) Checking for persistence method changes 
+[06/07/21, 12:55:08:804] info: [PERSIST] (T0105PT4A2K) Preparing state for hydration 
+[06/07/21, 12:55:08:804] info: [PERSIST] (T0105PT4A2K) State prepared for hydration 
+[06/07/21, 12:55:08:804] info: [PERSIST] (T0105PT4A2K) Checking for required data 
+[06/07/21, 12:55:08:805] info: [MIN-VERSION] Using build version 1623090449 for this min version bump check 
+[06/07/21, 12:55:08:805] info: [EMOJI_TRANSLATION] Emoji translations not needed for default locale, only adding keywords 
+[06/07/21, 12:55:08:805] info: [BOOT] (T0105PT4A2K) Booting warm 
+[06/07/21, 12:55:08:805] info: [DESKTOP-MIDDLEWARE] (T0105PT4A2K) Forwarding redux payload to desktop ["theme","notificationPrefs","connectivityPrefs","featureFlags","unreads","locale","version","userId"] 
+[06/07/21, 12:55:08:805] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D010650392S"} 
+[06/07/21, 12:55:08:805] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 12:55:08:805] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Team T0105PT4A2K booted, creating delegate 
+[06/07/21, 12:55:08:805] info: Exposing workspace desktop delegate for  {
+  "workspaceId": "T0105PT4A2K"
+} 
+[06/07/21, 12:55:08:805] info: Setting global desktop delegate 
+[06/07/21, 12:55:08:806] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Attempted boot for all workspaces, signaling desktop 
+[06/07/21, 12:55:08:806] info: [BOOT] (T0105PT4A2K) Connecting to socket 
+[06/07/21, 12:55:08:806] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from never_connected to prov_connect 
+[06/07/21, 12:55:08:806] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in prov_connect state for up to 10000 ms 
+[06/07/21, 12:55:08:806] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from prov_connect to prov_connecting 
+[06/07/21, 12:55:08:806] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in prov_connecting state for up to 35000 ms 
+[06/07/21, 12:55:08:806] info: [ENDPOINT-MANAGER] (T0105PT4A2K) No stale versions to clear. 
+[06/07/21, 12:55:08:806] info: [TRACER] (T0105PT4A2K) Tracing is not sampled by default for this team. 
+[06/07/21, 12:55:08:807] info: [BOOT] (T0105PT4A2K) Fetching fresh boot data after booting with persisted store 
+[06/07/21, 12:55:08:807] info: [BOOT] (T0105PT4A2K) Skipping persisted store if it exists because we're forcing fresh data fetch anyway 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.078 client.boot called with reason: deferred-data 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.078 client.boot is ENQUEUED 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.078 client.boot is ACTIVE 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 api.features called 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 api.features is ENQUEUED 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 experiments.getByUser called 
+[06/07/21, 12:55:08:807] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 experiments.getByUser is ENQUEUED 
+[06/07/21, 12:55:08:807] info: [BOOT] Booting into channel: D010650392S 
+[06/07/21, 12:55:08:807] info: [BOOT] (T0105PT4A2K) (T0105PT4A2K) Mounting client 
+[06/07/21, 12:55:08:808] info: [PERF] (T0105PT4A2K) First meaningful paint: 1189ms 
+[06/07/21, 12:55:08:808] info: [DRAFTS] (T0105PT4A2K) There are no channels with drafts 
+[06/07/21, 12:55:08:808] info: [BOOT] (T0105PT4A2K) Beaconed client boot mount success 
+[06/07/21, 12:55:08:808] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.214 sharedInvites.canGetLink called with reason: sidebar-mount 
+[06/07/21, 12:55:08:808] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.214 sharedInvites.canGetLink is ENQUEUED 
+[06/07/21, 12:55:08:808] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.214 sharedInvites.canGetLink is ACTIVE 
+[06/07/21, 12:55:08:808] info: [PERF] (T0105PT4A2K) Logged time to visible (TTV): 1314.6650000001046 
+[06/07/21, 12:55:08:808] info: [WORKSPACE] (T0105PT4A2K) Workspace mounted, transitioning focus to primary view message-pane_message_input 
+[06/07/21, 12:55:08:808] info: [PERF] bootClient_w took 1296.22ms 
+[06/07/21, 12:55:08:808] info: [BOOT] Booting other teams:  
+[06/07/21, 12:55:08:808] info: [MIN-VERSION] Starting client min-version poll. 
+[06/07/21, 12:55:08:808] info: [PERSIST] Purging persisted models, except for the following teamIds ["T0105PT4A2K"] 
+[06/07/21, 12:55:08:808] info: [WD] All assets have reported back; s: 9; f: 0 
+[06/07/21, 12:55:08:808] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after workspace became focused 
+[06/07/21, 12:55:08:808] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:55:08:808] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 12:55:08:809] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:55:08:809] info: Store: UPDATE_SETTINGS {
+  "userTheme": "light"
+} 
+[06/07/21, 12:55:08:809] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.214 sharedInvites.canGetLink is RESOLVED 
+[06/07/21, 12:55:08:809] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.078 client.boot is RESOLVED 
+[06/07/21, 12:55:08:809] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 api.features is ACTIVE 
+[06/07/21, 12:55:08:809] info: [SERVICE-WORKER] registration success {} 
+[06/07/21, 12:55:08:809] info: [SERVICE-WORKER-STATE] initial activated 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.669 calendar.getInstalledCalendars called with reason: calendar-get-installed-calendars 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.669 calendar.getInstalledCalendars is ENQUEUED 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.669 calendar.getInstalledCalendars is ACTIVE 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.696 drafts.list called with reason: boot-team 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.696 drafts.list is ENQUEUED 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.696 drafts.list is ACTIVE 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.698 drafts.listActive called with reason: boot-team 
+[06/07/21, 12:55:08:809] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.698 drafts.listActive is ENQUEUED 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.698 drafts.listActive is ACTIVE 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.699 promo.banner called with reason: fetch-megaphone-notification-data 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.699 promo.banner is ENQUEUED 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.699 promo.banner is ACTIVE 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.700 team.whatsNew called with reason: boot-team 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.700 team.whatsNew is ENQUEUED 
+[06/07/21, 12:55:08:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.700 team.whatsNew is ACTIVE 
+[06/07/21, 12:55:08:810] info: Store: UPDATE_SETTINGS {
+  "systemThemeSyncEnabled": false
+} 
+[06/07/21, 12:55:08:810] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:810] info: Store: SYNC (Empty) 
+[06/07/21, 12:55:08:810] info: Store: SELECTION_CHANGED T0105PT4A2K 
+[06/07/21, 12:55:08:810] info: Store: REDUX_UPDATE_FROM_WEBAPP (T0105PT4A2K) Changed keys [theme,notificationPrefs,connectivityPrefs,featureFlags,unreads,locale,version,userId] 
+[06/07/21, 12:55:08:811] info: Store: SYNC Synced 1 workspaces with IDs [T0105PT4A2K] 
+[06/07/21, 12:55:08:811] info: Store: SELECTION_CHANGED T0105PT4A2K 
+[06/07/21, 12:55:08:811] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "webapp-loaded"
+} 
+[06/07/21, 12:55:08:811] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 3,
+  "interval": 1072
+} 
+[06/07/21, 12:55:08:811] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 482,
+      "y": 200,
+      "width": 1024,
+      "height": 768
+    }
+  }
+} 
+[06/07/21, 12:55:08:811] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:811] info: Store: UPDATE_SETTINGS {
+  "forceHiddenInsetTitleBar": false
+} 
+[06/07/21, 12:55:08:811] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:811] info: Store: UPDATE_SETTINGS {
+  "trafficLightPosition": {
+    "x": 14,
+    "y": 22
+  }
+} 
+[06/07/21, 12:55:08:811] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:811] info: Store: UPDATE_SETTINGS {
+  "isIAEnabled": true
+} 
+[06/07/21, 12:55:08:812] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:08:812] info: Store: EXTEND_MENU global: menucategory-file,menucategory-jump-to 
+[06/07/21, 12:55:08:812] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 12:55:08:812] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 12:55:08:812] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 api.features is RESOLVED 
+[06/07/21, 12:55:08:812] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 experiments.getByUser is ACTIVE 
+[06/07/21, 12:55:08:812] info: [UNKNOWN-FETCH-MANAGER] (T0105PT4A2K) requesting _all_actions (1) 
+[06/07/21, 12:55:08:812] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.747 apps.actions.v2.list called with reason: list-message-actions 
+[06/07/21, 12:55:08:812] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.747 apps.actions.v2.list is ENQUEUED 
+[06/07/21, 12:55:08:812] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.747 apps.actions.v2.list is ACTIVE 
+[06/07/21, 12:55:08:812] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from prov_connecting to prov_connected 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in prov_connected state for up to 60000 ms 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from prov_connected to prov_finalize 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in prov_finalize state for up to 10000 ms 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from prov_finalize to prov_finalizing 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in prov_finalizing state for up to 10000 ms 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) Changing from prov_finalizing to connected 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) will stay in connected state for up to Infinity ms 
+[06/07/21, 12:55:08:813] info: [SOCKET-MANAGER] (T0105PT4A2K) Connected to primary region 
+[06/07/21, 12:55:08:813] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.759 users.customStatus.list called with reason: fetchCustomStatusOnReconnect 
+[06/07/21, 12:55:08:813] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.759 users.customStatus.list is ENQUEUED 
+[06/07/21, 12:55:08:813] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.759 users.customStatus.list is ACTIVE 
+[06/07/21, 12:55:08:814] info: [EVENTLOG] (T0105PT4A2K) fr=false, lc=false, lt=1623095625.161000 
+[06/07/21, 12:55:08:814] info: [EVENTLOG] (T0105PT4A2K) fetching events since 1623095625.161000 (84 seconds ago) 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history called with reason: fetchEventLogHistoryImmediately 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is ENQUEUED 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is ACTIVE 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history called with reason: fetchEventLogHistoryImmediately 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is ENQUEUED 
+[06/07/21, 12:55:08:814] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is ACTIVE 
+[06/07/21, 12:55:08:814] info: [MESSAGE-HISTORY] (T0105PT4A2K) Resetting reachedEnd 
+[06/07/21, 12:55:08:814] info: [PRESENCE_PROMPT] (T0105PT4A2K) ignoring prompt due to presence (active) 
+[06/07/21, 12:55:08:814] info: [UNREAD-COUNTS] (T0105PT4A2K) Fetching counts 
+[06/07/21, 12:55:08:815] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.767 client.counts called with reason: client-counts-api/fetchClientCounts 
+[06/07/21, 12:55:08:815] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.767 client.counts is ENQUEUED 
+[06/07/21, 12:55:08:815] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.767 client.counts is ACTIVE 
+[06/07/21, 12:55:08:819] info: [HISTORY-FETCH] (T0105PT4A2K) Fetching history for message pane: D010650392S oldest: 1623095603.002200 latest: null 
+[06/07/21, 12:55:08:819] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.804 conversations.history called with reason: message-pane/requestHistory 
+[06/07/21, 12:55:08:819] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.804 conversations.history is ENQUEUED 
+[06/07/21, 12:55:08:820] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: true -> false 
+[06/07/21, 12:55:08:821] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+} 
+[06/07/21, 12:55:08:822] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.669 calendar.getInstalledCalendars is RESOLVED 
+[06/07/21, 12:55:08:822] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.804 conversations.history is ACTIVE 
+[06/07/21, 12:55:08:823] info: [BOOT-QUEUE] T0105PT4A2K noversion-1623095708.080 experiments.getByUser is RESOLVED 
+[06/07/21, 12:55:08:827] info: [PERSIST] Purged persisted models [] 
+[06/07/21, 12:55:08:841] info: [MESSAGE-LIST] (T0105PT4A2K) componentWillReceiveProps isLoading: true isLoadingOlder: false timestamps: 28 
+[06/07/21, 12:55:08:851] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.698 drafts.listActive is RESOLVED 
+[06/07/21, 12:55:08:852] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.696 drafts.list is RESOLVED 
+[06/07/21, 12:55:08:852] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.700 team.whatsNew is RESOLVED 
+[06/07/21, 12:55:08:873] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.699 promo.banner is RESOLVED 
+[06/07/21, 12:55:08:874] info: [DRAFTS] (T0105PT4A2K) Fetched 1 active draft ids ✅ - page 1 
+[06/07/21, 12:55:08:875] info: [DRAFTS] (T0105PT4A2K) Purged 0 inactive drafts 
+[06/07/21, 12:55:08:875] info: [DRAFTS] (T0105PT4A2K) Fetched 1 active drafts ✅ - page 1 
+[06/07/21, 12:55:08:875] info: [DRAFTS] (T0105PT4A2K) Reconciliation handled - server ts <= local model ts (G017BJUUS2U-1601051582.002100) 
+[06/07/21, 12:55:08:875] info: [DRAFTS] (T0105PT4A2K) Reconciled fetched drafts:
+Drafts added: 0
+Drafts updated: 0
+Drafts removed: 0
+Drafts ignored: 0 
+[06/07/21, 12:55:08:876] info: [DRAFTS] (T0105PT4A2K) No files associated with the fetched drafts 
+[06/07/21, 12:55:08:876] info: [DRAFTS] (T0105PT4A2K) Successfully fetched all active and inactive drafts ✨ 
+[06/07/21, 12:55:08:893] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.747 apps.actions.v2.list is RESOLVED 
+[06/07/21, 12:55:08:896] info: [UNKNOWN-FETCH-MANAGER] (T0105PT4A2K) received _all_actions (1) 
+[06/07/21, 12:55:08:905] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is RESOLVED 
+[06/07/21, 12:55:08:906] info: [EVENTLOG] (T0105PT4A2K) nothing to process 
+[06/07/21, 12:55:08:909] info: [PERSIST] (T0105PT4A2K) Successfully persisted state 
+[06/07/21, 12:55:08:927] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.761 ublockworkaround.history is RESOLVED 
+[06/07/21, 12:55:08:929] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.759 users.customStatus.list is RESOLVED 
+[06/07/21, 12:55:08:929] info: [DND] (T0105PT4A2K) Preparing to fetch DND times for the following members: U0103USHQBX,UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL 
+[06/07/21, 12:55:08:930] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.928 dnd.info called with reason: getDndTimesForSubscribedMembers 
+[06/07/21, 12:55:08:930] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.928 dnd.info is ENQUEUED 
+[06/07/21, 12:55:08:930] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.928 dnd.info is ACTIVE 
+[06/07/21, 12:55:08:930] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.929 dnd.teamInfo called with reason: getDndTimesForSubscribedMembers:self 
+[06/07/21, 12:55:08:931] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.929 dnd.teamInfo is ENQUEUED 
+[06/07/21, 12:55:08:932] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.929 dnd.teamInfo is ACTIVE 
+[06/07/21, 12:55:08:932] info: [EVENTLOG] (T0105PT4A2K) nothing to process 
+[06/07/21, 12:55:08:932] info: [EVENTLOG] (T0105PT4A2K) fetched finish (cancelled? false) 
+[06/07/21, 12:55:08:932] info: [EVENTLOG] (T0105PT4A2K) dispatching signal and clearing timestamp 
+[06/07/21, 12:55:08:943] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.767 client.counts is RESOLVED 
+[06/07/21, 12:55:08:963] info: [COUNTS] (T0105PT4A2K) Applying counts to channels 
+[06/07/21, 12:55:08:964] info: [COUNTS] (T0105PT4A2K) Threads has_unreads:false mention_count:0 
+[06/07/21, 12:55:08:965] info: [COUNTS] (T0105PT4A2K) Completed counts processing 
+[06/07/21, 12:55:08:978] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.804 conversations.history is RESOLVED 
+[06/07/21, 12:55:08:979] info: [BOOT] Feature flag config version: 1623095633; Experiments config version: 1623095633 
+[06/07/21, 12:55:08:980] info: [BOOT] Current earliest config version: 1623095633; All config versions: {"T0105PT4A2K":1623095633} 
+[06/07/21, 12:55:08:980] info: [MIN-VERSION] Using build version 1623090449 for this min version bump check 
+[06/07/21, 12:55:08:980] info: [BOOT] (T0105PT4A2K) Dispatching boot data 
+[06/07/21, 12:55:08:990] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.989 files.list called with reason: paperclip-recents 
+[06/07/21, 12:55:08:990] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.989 files.list is ENQUEUED 
+[06/07/21, 12:55:08:990] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.989 files.list is ACTIVE 
+[06/07/21, 12:55:08:996] info: [PLATFORM-CHANNEL-ACTI] (T0105PT4A2K) Not updating count for channel D010650392S, as count was already set to 0 
+[06/07/21, 12:55:08:997] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.997 commands.list called with reason: loadSlashCommands 
+[06/07/21, 12:55:08:998] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.997 commands.list is ENQUEUED 
+[06/07/21, 12:55:08:998] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.997 commands.list is ACTIVE 
+[06/07/21, 12:55:08:999] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 i18n.translations.get called with reason: fetchTranslatedCustomStatusPresets 
+[06/07/21, 12:55:08:999] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 i18n.translations.get is ENQUEUED 
+[06/07/21, 12:55:09:000] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 i18n.translations.get is ACTIVE 
+[06/07/21, 12:55:09:000] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 team.whatsNew called with reason: prefs/maybeSetLocaleSideEffect 
+[06/07/21, 12:55:09:000] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 team.whatsNew is ENQUEUED 
+[06/07/21, 12:55:09:000] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 team.whatsNew is ACTIVE 
+[06/07/21, 12:55:09:001] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D010650392S because (28) timestamps added 
+[06/07/21, 12:55:09:001] info: [BOOT] (T0105PT4A2K) Boot complete 
+[06/07/21, 12:55:09:001] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D010650392S after a new message 
+[06/07/21, 12:55:09:001] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:55:09:001] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Reacting to  {"type":"[60] Set a value that represents whether we are currently in the boot phase","payload":false,"error":false} 
+[06/07/21, 12:55:09:002] info: [AUTH] Installing incremental auth handler 
+[06/07/21, 12:55:09:046] info: [PERF] (T0105PT4A2K) Logged time to usable (TTU): 2138.5549999999967 
+[06/07/21, 12:55:09:083] info: [PLATFORM-CHANNEL-ACTI] (T0105PT4A2K) Not updating count for channel D010650392S, as count was already set to 0 
+[06/07/21, 12:55:09:084] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D010650392S because (1) timestamps added 
+[06/07/21, 12:55:09:086] info: [API-Q] (T0105PT4A2K) noversion-1623095709.085 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 12:55:09:086] info: [API-Q] (T0105PT4A2K) noversion-1623095709.085 Flannel users/info is ENQUEUED 
+[06/07/21, 12:55:09:086] info: [API-Q] (T0105PT4A2K) noversion-1623095709.085 Flannel users/info is ACTIVE 
+[06/07/21, 12:55:09:088] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.929 dnd.teamInfo is RESOLVED 
+[06/07/21, 12:55:09:088] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.928 dnd.info is RESOLVED 
+[06/07/21, 12:55:09:088] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.088 help.issues.list called with reason: fetchAndUpsertHelpIssues 
+[06/07/21, 12:55:09:088] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.088 help.issues.list is ENQUEUED 
+[06/07/21, 12:55:09:089] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.088 help.issues.list is ACTIVE 
+[06/07/21, 12:55:09:089] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.089 users.channelSections.list called with reason: conditional-fetch-manager 
+[06/07/21, 12:55:09:089] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.089 users.channelSections.list is ENQUEUED 
+[06/07/21, 12:55:09:089] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.089 users.channelSections.list is ACTIVE 
+[06/07/21, 12:55:09:104] info: [MESSAGE-LIST] (T0105PT4A2K) componentWillReceiveProps isLoading: false isLoadingOlder: false timestamps: 28 
+[06/07/21, 12:55:09:112] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 12:55:09:123] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts called with reason: flannel-call:users/counts 
+[06/07/21, 12:55:09:124] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is ENQUEUED 
+[06/07/21, 12:55:09:124] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is ACTIVE 
+[06/07/21, 12:55:09:124] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts called with reason: flannel-call:users/counts 
+[06/07/21, 12:55:09:125] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is ENQUEUED 
+[06/07/21, 12:55:09:125] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is ACTIVE 
+[06/07/21, 12:55:09:126] info: [DND] (T0105PT4A2K) Fetched DND info for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL 
+[06/07/21, 12:55:09:126] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL 
+[06/07/21, 12:55:09:127] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 12:55:09:127] info: [DND] (T0105PT4A2K) Fetched DND info for the following member: U0103USHQBX 
+[06/07/21, 12:55:09:127] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX 
+[06/07/21, 12:55:09:128] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 12:55:09:130] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.997 commands.list is RESOLVED 
+[06/07/21, 12:55:09:147] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 i18n.translations.get is RESOLVED 
+[06/07/21, 12:55:09:147] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.998 team.whatsNew is RESOLVED 
+[06/07/21, 12:55:09:163] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095708.989 files.list is RESOLVED 
+[06/07/21, 12:55:09:210] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.088 help.issues.list is RESOLVED 
+[06/07/21, 12:55:09:224] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.089 users.channelSections.list is RESOLVED 
+[06/07/21, 12:55:09:258] info: [API-Q] (T0105PT4A2K) noversion-1623095709.258 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 12:55:09:258] info: [API-Q] (T0105PT4A2K) noversion-1623095709.258 Flannel users/search is ENQUEUED 
+[06/07/21, 12:55:09:259] info: [API-Q] (T0105PT4A2K) noversion-1623095709.258 Flannel users/search is ACTIVE 
+[06/07/21, 12:55:09:263] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 12:55:09:306] info: [API-Q] (T0105PT4A2K) noversion-1623095709.085 Flannel users/info is RESOLVED 
+[06/07/21, 12:55:09:306] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is RESOLVED 
+[06/07/21, 12:55:09:335] info: [API-Q] (T0105PT4A2K) noversion-1623095709.258 Flannel users/search is RESOLVED 
+[06/07/21, 12:55:09:340] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.340 search.autocomplete.model called with reason: AutocompleteModelCache 
+[06/07/21, 12:55:09:340] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.340 search.autocomplete.model is ENQUEUED 
+[06/07/21, 12:55:09:341] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.340 search.autocomplete.model is ACTIVE 
+[06/07/21, 12:55:09:341] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.341 search.autocomplete.offlineFeatures called with reason: no_reason_provided 
+[06/07/21, 12:55:09:341] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.341 search.autocomplete.offlineFeatures is ENQUEUED 
+[06/07/21, 12:55:09:341] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.341 search.autocomplete.offlineFeatures is ACTIVE 
+[06/07/21, 12:55:09:387] info: [API-Q] (T0105PT4A2K) noversion-1623095709.123 Flannel users/counts is RESOLVED 
+[06/07/21, 12:55:09:459] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.341 search.autocomplete.offlineFeatures is RESOLVED 
+[06/07/21, 12:55:09:471] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 12:55:09:471] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because attention not on chat (window_not_focused) 
+[06/07/21, 12:55:09:477] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095709.340 search.autocomplete.model is RESOLVED 
+[06/07/21, 12:55:09:500] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D010650392S after a new message 
+[06/07/21, 12:55:09:501] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because attention not on chat (window_not_focused) 
+[06/07/21, 12:55:10:140] info: [API-Q] (T0105PT4A2K) noversion-1623095710.139 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 12:55:10:140] info: [API-Q] (T0105PT4A2K) noversion-1623095710.139 Flannel users/info is ENQUEUED 
+[06/07/21, 12:55:10:141] info: [API-Q] (T0105PT4A2K) noversion-1623095710.139 Flannel users/info is ACTIVE 
+[06/07/21, 12:55:10:178] info: [API-Q] (T0105PT4A2K) noversion-1623095710.139 Flannel users/info is RESOLVED 
+[06/07/21, 12:55:17:128] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 12:55:17:177] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 12:55:17:178] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:55:18:159] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: true -> false 
+[06/07/21, 12:55:18:759] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 12:55:19:112] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 12:55:19:112] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:55:21:664] info: [DND] (T0105PT4A2K) Preparing to fetch DND times for the following members: U01064PGAA2,U010650A7ML 
+[06/07/21, 12:55:21:664] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095721.664 dnd.teamInfo called with reason: getDndTimesForSubscribedMembers:other 
+[06/07/21, 12:55:21:665] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095721.664 dnd.teamInfo is ENQUEUED 
+[06/07/21, 12:55:21:665] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095721.664 dnd.teamInfo is ACTIVE 
+[06/07/21, 12:55:21:781] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095721.664 dnd.teamInfo is RESOLVED 
+[06/07/21, 12:55:21:782] info: [DND] (T0105PT4A2K) Fetched DND info for the following members: U01064PGAA2,U010650A7ML 
+[06/07/21, 12:55:21:785] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 12:55:21:786] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 12:55:22:181] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 67,
+      "y": 55,
+      "width": 927,
+      "height": 1025
+    }
+  }
+} 
+[06/07/21, 12:55:22:183] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["settings"] 
+[06/07/21, 12:55:24:857] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 12:56:08:760] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 12:56:18:051] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095778.049 client.counts called with reason: client-counts-api/fetchClientCounts 
+[06/07/21, 12:56:18:052] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095778.049 client.counts is ENQUEUED 
+[06/07/21, 12:56:18:052] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095778.049 client.counts is ACTIVE 
+[06/07/21, 12:56:18:201] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095778.049 client.counts is RESOLVED 
+[06/07/21, 12:56:18:211] info: [COUNTS] (T0105PT4A2K) Applying counts to channels 
+[06/07/21, 12:56:18:213] info: [COUNTS] (T0105PT4A2K) Recounted D010650392S; initial: {"unreadCnt":0,"unreadHighlightCnt":0}; after: {"unreadCnt":0,"unreadHighlightCnt":0} 
+[06/07/21, 12:56:18:213] info: [COUNTS] (T0105PT4A2K) Threads has_unreads:false mention_count:0 
+[06/07/21, 12:56:18:213] info: [COUNTS] (T0105PT4A2K) Completed counts processing 
+[06/07/21, 12:56:18:920] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 12:56:18:984] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 12:56:18:985] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 12:56:26:021] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095786.019 channels.suggestions called with reason: channels-suggestions 
+[06/07/21, 12:56:26:021] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095786.019 channels.suggestions is ENQUEUED 
+[06/07/21, 12:56:26:021] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095786.019 channels.suggestions is ACTIVE 
+[06/07/21, 12:56:26:157] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623095786.019 channels.suggestions is RESOLVED 
+[06/07/21, 12:57:06:754] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 12:57:57:132] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 12:57:57:152] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 12:58:27:139] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 12:58:27:144] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 12:58:57:175] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 12:58:57:176] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 12:59:37:211] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 12:59:37:212] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:00:21:811] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:00:21:816] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:00:27:230] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:00:27:234] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:00:47:244] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:00:47:249] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:01:07:254] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:01:07:259] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:01:17:273] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:01:17:275] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:01:37:272] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:01:37:275] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:01:47:272] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:01:47:277] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:02:07:275] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:02:07:280] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:02:57:334] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:02:57:336] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:04:17:943] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 13:04:18:017] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 13:04:18:018] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 13:04:23:104] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 13:05:22:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:05:22:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:10:22:609] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:10:22:609] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:10:28:153] info: [COUNTS] (T0105PT4A2K) Updated unread_cnt for D0103USL51B: 1 
+[06/07/21, 13:10:28:155] info: [UNREAD-COUNTS] (T0105PT4A2K) Fetching history for unread counting: D0103USL51B, waiting 6308 ms 
+[06/07/21, 13:10:28:167] info: Store: NEW_NOTIFICATION {
+  "id": "T0105PT4A2K_1623096636.000700",
+  "title": "[REDACTED]",
+  "subtitle": "[REDACTED]",
+  "content": "[REDACTED]",
+  "authorName": "[REDACTED]",
+  "avatarImage": "[REDACTED]",
+  "teamId": "T0105PT4A2K",
+  "userId": "U0103USHQBX",
+  "msg": "1623096636.000700",
+  "channel": "D0103USL51B",
+  "channelName": "[REDACTED]",
+  "launchUri": "slack://channel?id=D0103USL51B&message=1623096636.000700&team=T0105PT4A2K",
+  "silent": true,
+  "hasReply": true,
+  "trace_id": "{\"traceId\":\"099f1458e7f93525\",\"parentSpanId\":\"099f1458e7f93525\"}"
+} 
+[06/07/21, 13:10:28:175] info: [DESKTOP-MIDDLEWARE] (T0105PT4A2K) Forwarding redux payload to desktop ["unreads"] 
+[06/07/21, 13:10:28:178] info: Store: REDUX_UPDATE_FROM_WEBAPP (T0105PT4A2K) Changed keys [unreads] 
+[06/07/21, 13:10:34:466] info: [HISTORY-FETCH] (T0105PT4A2K) Fetching history for unread counting: D0103USL51B 
+[06/07/21, 13:10:34:492] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623096634.488 conversations.history called with reason: unread-counts/onAddTimestamps 
+[06/07/21, 13:10:34:492] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623096634.488 conversations.history is ENQUEUED 
+[06/07/21, 13:10:34:492] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623096634.488 conversations.history is ACTIVE 
+[06/07/21, 13:10:34:704] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623096634.488 conversations.history is RESOLVED 
+[06/07/21, 13:10:34:712] info: [PLATFORM-CHANNEL-ACTI] (T0105PT4A2K) setting count for channel D0103USL51B to 0, and marking channel as stale. 
+[06/07/21, 13:10:34:717] info: [PINS] (T0105PT4A2K) Pins count updated for channel D0103USL51B: 0 
+[06/07/21, 13:12:09:654] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 13:13:23:626] info: [RTM] (T0105PT4A2K) Processed 1 presence_change event(s) over 24.46ms 
+[06/07/21, 13:15:23:602] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:15:23:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:15:47:958] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:15:47:992] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:15:57:963] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:15:57:966] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:18:18:082] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:18:18:085] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:18:28:082] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:18:28:087] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:20:18:169] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:20:18:173] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:20:23:604] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:20:23:605] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:20:28:169] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:20:28:174] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:25:24:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:25:24:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:27:09:602] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 13:28:28:583] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:28:28:587] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:28:38:587] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:28:38:590] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:29:38:630] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:29:38:634] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:30:24:604] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:30:24:604] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:31:26:686] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 13:31:26:798] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 13:31:26:798] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 13:31:27:300] info: [DND] (T0105PT4A2K) There are no members in the presence subscription that we need to fetch DND times for! 
+[06/07/21, 13:31:27:855] info: [ACTION:CHANNEL-SIDEBAR] Selected D0103USL51B 
+[06/07/21, 13:31:27:856] info: [CHANNEL-SIDEBAR] (T0105PT4A2K) onItemSelect D0103USL51B 
+[06/07/21, 13:31:27:856] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D0103USL51B"} 
+[06/07/21, 13:31:27:901] info: [HISTORY-NAVIGATION] Adding route to the history stack 
+[06/07/21, 13:31:27:901] info: [SWITCH-TO-CHANNEL] (T0105PT4A2K) Switching to D0103USL51B at last_read 1623095583.000600 
+[06/07/21, 13:31:27:901] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 13:31:27:914] info: [MESSAGE-LIST] (T0105PT4A2K) getScrollmark reason:channel_change channelId:D010650392S state.hasKeyboardFocus:false props.hasKeyboardFocus:false initialActiveItem:1623095603.002200 mark:1623095603.002200 offset:733 
+[06/07/21, 13:31:27:916] info: [MESSAGE-LIST] (T0105PT4A2K) Switching channels: D0103USL51B timestamps: 28 
+[06/07/21, 13:31:28:075] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 13:31:28:157] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 13:31:28:159] info: [API-Q] (T0105PT4A2K) noversion-1623097888.158 Flannel permissions/info called with reason: flannel-call:permissions/info 
+[06/07/21, 13:31:28:160] info: [API-Q] (T0105PT4A2K) noversion-1623097888.158 Flannel permissions/info is ENQUEUED 
+[06/07/21, 13:31:28:160] info: [API-Q] (T0105PT4A2K) noversion-1623097888.158 Flannel permissions/info is ACTIVE 
+[06/07/21, 13:31:28:161] info: [API-Q] (T0105PT4A2K) noversion-1623097888.161 Flannel users/counts called with reason: flannel-call:users/counts 
+[06/07/21, 13:31:28:161] info: [API-Q] (T0105PT4A2K) noversion-1623097888.161 Flannel users/counts is ENQUEUED 
+[06/07/21, 13:31:28:162] info: [API-Q] (T0105PT4A2K) noversion-1623097888.161 Flannel users/counts is ACTIVE 
+[06/07/21, 13:31:28:368] info: [API-Q] (T0105PT4A2K) noversion-1623097888.158 Flannel permissions/info is RESOLVED 
+[06/07/21, 13:31:28:413] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after debounced channel change to D0103USL51B 
+[06/07/21, 13:31:28:414] info: [CHECK-UNREADS] (T0105PT4A2K) Marking D0103USL51B because unread line is visible 
+[06/07/21, 13:31:28:414] info: [SET-LAST-READ] (T0105PT4A2K) markLastRead D0103USL51B:1623096636.000700, immediate: undefined 
+[06/07/21, 13:31:28:415] info: [SET-LAST-READ] (T0105PT4A2K) delaying D0103USL51B mark by 4343.361430045198ms 
+[06/07/21, 13:31:28:416] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D0103USL51B because last_read changed to 1623096636.000700 
+[06/07/21, 13:31:28:416] info: [COUNTS] (T0105PT4A2K) Updated unread_cnt for D0103USL51B: 0 
+[06/07/21, 13:31:28:473] info: [API-Q] (T0105PT4A2K) noversion-1623097888.161 Flannel users/counts is RESOLVED 
+[06/07/21, 13:31:28:475] info: [DESKTOP-MIDDLEWARE] (T0105PT4A2K) Forwarding redux payload to desktop ["unreads"] 
+[06/07/21, 13:31:28:477] info: Store: REDUX_UPDATE_FROM_WEBAPP (T0105PT4A2K) Changed keys [unreads] 
+[06/07/21, 13:31:28:520] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 13:31:28:521] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 13:31:28:698] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:31:28:700] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:31:29:069] info: [API-Q] (T0105PT4A2K) noversion-1623097889.069 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 13:31:29:070] info: [API-Q] (T0105PT4A2K) noversion-1623097889.069 Flannel users/search is ENQUEUED 
+[06/07/21, 13:31:29:070] info: [API-Q] (T0105PT4A2K) noversion-1623097889.069 Flannel users/search is ACTIVE 
+[06/07/21, 13:31:29:139] info: [API-Q] (T0105PT4A2K) noversion-1623097889.069 Flannel users/search is RESOLVED 
+[06/07/21, 13:31:31:117] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Reacting to  {"type":"[399] Starts a download on the desktop app","payload":{"fileId":"F0249JWAB8S","downloadUrl":"[redacted]","showFlexpane":true},"error":false} 
+[06/07/21, 13:31:31:119] info: Store: START_DOWNLOAD {
+  "id": "F0249JWAB8S",
+  "teamId": "T0105PT4A2K",
+  "url": "[REDACTED]",
+  "userId": "U0103USHQBX",
+  "appVersion": "4.16.0"
+} 
+[06/07/21, 13:31:31:119] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 13:31:31:488] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F0249JWAB8S",
+  "downloadState": "progressing",
+  "downloadPath": "[REDACTED]"
+} 
+[06/07/21, 13:31:31:488] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 13:31:31:732] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F0249JWAB8S",
+  "progress": 1,
+  "downloadState": "progressing"
+} 
+[06/07/21, 13:31:31:734] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 13:31:31:769] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F0249JWAB8S",
+  "downloadState": "completed",
+  "endTime": 1623097891741
+} 
+[06/07/21, 13:31:31:770] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 13:31:32:759] info: [SET-LAST-READ] (T0105PT4A2K) delay resolved, marking D0103USL51B with API 
+[06/07/21, 13:31:32:761] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623097892.760 conversations.mark called with reason: viewed 
+[06/07/21, 13:31:32:761] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623097892.760 conversations.mark is ENQUEUED 
+[06/07/21, 13:31:32:762] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623097892.760 conversations.mark is ACTIVE 
+[06/07/21, 13:31:32:997] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623097892.760 conversations.mark is RESOLVED 
+[06/07/21, 13:31:35:392] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Reacting to  {"type":"[406] Opens a file downloaded by the desktop app","payload":"F0249JWAB8S","error":false} 
+[06/07/21, 13:31:35:515] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 13:32:04:507] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 13:32:04:525] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 13:32:04:568] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 13:32:04:568] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because attention not on chat (window_not_focused) 
+[06/07/21, 13:32:28:718] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:32:28:724] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:33:18:786] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:33:18:787] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:33:58:809] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:33:58:811] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:34:58:830] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:34:58:832] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:35:24:629] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:35:24:635] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:35:48:866] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:35:48:869] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:37:59:003] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:37:59:005] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:38:18:986] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:38:18:989] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:40:24:637] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:40:24:638] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:41:08:785] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 13:43:09:223] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:43:09:228] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:43:29:235] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:43:29:240] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:45:24:640] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:45:24:641] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:47:59:519] info: [API-Q] (T0105PT4A2K) noversion-1623098879.518 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:47:59:519] info: [API-Q] (T0105PT4A2K) noversion-1623098879.518 Flannel users/info is ENQUEUED 
+[06/07/21, 13:47:59:520] info: [API-Q] (T0105PT4A2K) noversion-1623098879.518 Flannel users/info is ACTIVE 
+[06/07/21, 13:47:59:721] info: [API-Q] (T0105PT4A2K) noversion-1623098879.518 Flannel users/info is RESOLVED 
+[06/07/21, 13:48:09:477] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 13:48:09:481] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:48:39:527] info: [API-Q] (T0105PT4A2K) noversion-1623098919.525 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:48:39:527] info: [API-Q] (T0105PT4A2K) noversion-1623098919.525 Flannel users/info is ENQUEUED 
+[06/07/21, 13:48:39:528] info: [API-Q] (T0105PT4A2K) noversion-1623098919.525 Flannel users/info is ACTIVE 
+[06/07/21, 13:48:39:563] info: [API-Q] (T0105PT4A2K) noversion-1623098919.525 Flannel users/info is RESOLVED 
+[06/07/21, 13:48:49:501] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 13:48:49:506] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:49:19:547] info: [API-Q] (T0105PT4A2K) noversion-1623098959.545 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:49:19:547] info: [API-Q] (T0105PT4A2K) noversion-1623098959.545 Flannel users/info is ENQUEUED 
+[06/07/21, 13:49:19:548] info: [API-Q] (T0105PT4A2K) noversion-1623098959.545 Flannel users/info is ACTIVE 
+[06/07/21, 13:49:19:611] info: [API-Q] (T0105PT4A2K) noversion-1623098959.545 Flannel users/info is RESOLVED 
+[06/07/21, 13:50:24:644] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:50:24:644] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:50:39:610] info: [API-Q] (T0105PT4A2K) noversion-1623099039.608 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:50:39:610] info: [API-Q] (T0105PT4A2K) noversion-1623099039.608 Flannel users/info is ENQUEUED 
+[06/07/21, 13:50:39:610] info: [API-Q] (T0105PT4A2K) noversion-1623099039.608 Flannel users/info is ACTIVE 
+[06/07/21, 13:50:39:739] info: [API-Q] (T0105PT4A2K) noversion-1623099039.608 Flannel users/info is RESOLVED 
+[06/07/21, 13:55:19:907] info: [PERSIST] (T0105PT4A2K) Successfully persisted state 
+[06/07/21, 13:55:24:646] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 13:55:24:646] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 13:56:08:763] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 13:56:29:879] info: [API-Q] (T0105PT4A2K) noversion-1623099389.876 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:56:29:880] info: [API-Q] (T0105PT4A2K) noversion-1623099389.876 Flannel users/info is ENQUEUED 
+[06/07/21, 13:56:29:881] info: [API-Q] (T0105PT4A2K) noversion-1623099389.876 Flannel users/info is ACTIVE 
+[06/07/21, 13:56:30:128] info: [API-Q] (T0105PT4A2K) noversion-1623099389.876 Flannel users/info is RESOLVED 
+[06/07/21, 13:58:29:980] info: Store: SET_SYSTEM_IDLE idle_presence 
+[06/07/21, 13:58:29:986] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 13:59:00:162] info: [API-Q] (T0105PT4A2K) noversion-1623099540.159 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 13:59:00:162] info: [API-Q] (T0105PT4A2K) noversion-1623099540.159 Flannel users/info is ENQUEUED 
+[06/07/21, 13:59:00:162] info: [API-Q] (T0105PT4A2K) noversion-1623099540.159 Flannel users/info is ACTIVE 
+[06/07/21, 13:59:00:387] info: [API-Q] (T0105PT4A2K) noversion-1623099540.159 Flannel users/info is RESOLVED 
+[06/07/21, 14:00:24:649] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:00:24:650] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:01:00:166] info: [API-Q] (T0105PT4A2K) noversion-1623099660.163 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:01:00:166] info: [API-Q] (T0105PT4A2K) noversion-1623099660.163 Flannel users/info is ENQUEUED 
+[06/07/21, 14:01:00:167] info: [API-Q] (T0105PT4A2K) noversion-1623099660.163 Flannel users/info is ACTIVE 
+[06/07/21, 14:01:00:302] info: [API-Q] (T0105PT4A2K) noversion-1623099660.163 Flannel users/info is RESOLVED 
+[06/07/21, 14:01:20:150] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:01:20:152] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:01:40:158] info: [API-Q] (T0105PT4A2K) noversion-1623099700.156 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:01:40:158] info: [API-Q] (T0105PT4A2K) noversion-1623099700.156 Flannel users/info is ENQUEUED 
+[06/07/21, 14:01:40:158] info: [API-Q] (T0105PT4A2K) noversion-1623099700.156 Flannel users/info is ACTIVE 
+[06/07/21, 14:01:40:220] info: [API-Q] (T0105PT4A2K) noversion-1623099700.156 Flannel users/info is RESOLVED 
+[06/07/21, 14:01:50:140] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:01:50:146] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:02:20:170] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:02:20:236] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:02:20:236] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:02:20:258] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:02:20:258] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:02:23:888] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:02:28:830] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:02:28:845] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:02:28:845] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:02:28:846] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:03:34:935] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:03:34:967] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:03:34:968] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:03:40:554] info: [ACTION:CHANNEL-SIDEBAR] Selected D010650392S 
+[06/07/21, 14:03:40:554] info: [CHANNEL-SIDEBAR] (T0105PT4A2K) onItemSelect D010650392S 
+[06/07/21, 14:03:40:556] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D010650392S"} 
+[06/07/21, 14:03:40:606] info: [HISTORY-NAVIGATION] Adding route to the history stack 
+[06/07/21, 14:03:40:606] info: [SWITCH-TO-CHANNEL] (T0105PT4A2K) Switching to D010650392S at scrollmark 1623095603.002200 offset 733 
+[06/07/21, 14:03:40:606] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 14:03:40:623] info: [MESSAGE-LIST] (T0105PT4A2K) getScrollmark reason:channel_change channelId:D0103USL51B at end 
+[06/07/21, 14:03:40:625] info: [MESSAGE-LIST] (T0105PT4A2K) Switching channels: D010650392S timestamps: 28 
+[06/07/21, 14:03:40:703] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 14:03:40:771] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 14:03:41:119] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 14:03:41:119] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D010650392S because last_read >= latest && channel is read 
+[06/07/21, 14:03:41:705] info: [API-Q] (T0105PT4A2K) noversion-1623099821.704 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 14:03:41:706] info: [API-Q] (T0105PT4A2K) noversion-1623099821.704 Flannel users/search is ENQUEUED 
+[06/07/21, 14:03:41:706] info: [API-Q] (T0105PT4A2K) noversion-1623099821.704 Flannel users/search is ACTIVE 
+[06/07/21, 14:03:41:908] info: [API-Q] (T0105PT4A2K) noversion-1623099821.704 Flannel users/search is RESOLVED 
+[06/07/21, 14:03:43:633] info: [ACTION:CHANNEL-SIDEBAR] Selected D0103USL51B 
+[06/07/21, 14:03:43:634] info: [CHANNEL-SIDEBAR] (T0105PT4A2K) onItemSelect D0103USL51B 
+[06/07/21, 14:03:43:634] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D0103USL51B"} 
+[06/07/21, 14:03:43:676] info: [HISTORY-NAVIGATION] Adding route to the history stack 
+[06/07/21, 14:03:43:676] info: [SWITCH-TO-CHANNEL] (T0105PT4A2K) Switching to D0103USL51B at end 
+[06/07/21, 14:03:43:676] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 14:03:43:683] info: [MESSAGE-LIST] (T0105PT4A2K) getScrollmark reason:channel_change channelId:D010650392S at end 
+[06/07/21, 14:03:43:684] info: [MESSAGE-LIST] (T0105PT4A2K) Switching channels: D0103USL51B timestamps: 28 
+[06/07/21, 14:03:43:809] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 14:03:43:873] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 14:03:44:219] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 14:03:44:220] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:03:44:804] info: [API-Q] (T0105PT4A2K) noversion-1623099824.803 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 14:03:44:805] info: [API-Q] (T0105PT4A2K) noversion-1623099824.803 Flannel users/search is ENQUEUED 
+[06/07/21, 14:03:44:805] info: [API-Q] (T0105PT4A2K) noversion-1623099824.803 Flannel users/search is ACTIVE 
+[06/07/21, 14:03:44:841] info: [API-Q] (T0105PT4A2K) noversion-1623099824.803 Flannel users/search is RESOLVED 
+[06/07/21, 14:04:20:285] info: [API-Q] (T0105PT4A2K) noversion-1623099860.284 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:04:20:285] info: [API-Q] (T0105PT4A2K) noversion-1623099860.284 Flannel users/info is ENQUEUED 
+[06/07/21, 14:04:20:285] info: [API-Q] (T0105PT4A2K) noversion-1623099860.284 Flannel users/info is ACTIVE 
+[06/07/21, 14:04:20:320] info: [API-Q] (T0105PT4A2K) noversion-1623099860.284 Flannel users/info is RESOLVED 
+[06/07/21, 14:05:20:331] info: [API-Q] (T0105PT4A2K) noversion-1623099920.330 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:05:20:331] info: [API-Q] (T0105PT4A2K) noversion-1623099920.330 Flannel users/info is ENQUEUED 
+[06/07/21, 14:05:20:331] info: [API-Q] (T0105PT4A2K) noversion-1623099920.330 Flannel users/info is ACTIVE 
+[06/07/21, 14:05:20:367] info: [API-Q] (T0105PT4A2K) noversion-1623099920.330 Flannel users/info is RESOLVED 
+[06/07/21, 14:05:24:672] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:05:24:678] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:06:30:365] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:06:30:393] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:07:00:414] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:07:00:416] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:07:38:088] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:08:10:429] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:08:10:436] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:09:20:485] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:09:20:487] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:10:00:532] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:10:00:534] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:10:10:512] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:10:10:517] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:10:24:681] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:10:24:681] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:11:08:786] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 14:15:24:683] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:15:24:684] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:16:50:839] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:16:50:845] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:17:00:865] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:17:00:866] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:20:24:686] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:20:24:687] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:23:41:218] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:23:41:220] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:23:51:194] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:23:51:198] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:25:24:689] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:25:24:689] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:26:08:763] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 14:26:27:575] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:26:27:656] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:26:27:656] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:26:29:966] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:28:14:627] info: [MIN-VERSION] Checking to see if we should reload 
+[06/07/21, 14:28:14:627] info: [MIN-VERSION] teamIds: T0105PT4A2K; versionTs: 1623090405; buildVersionTs: 1623090449; configVersionTs: 1623095633; All config versions: {"T0105PT4A2K":1623095633} 
+[06/07/21, 14:28:14:632] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623101294.631 client.shouldReload called with reason: polling 
+[06/07/21, 14:28:14:632] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623101294.631 client.shouldReload is ENQUEUED 
+[06/07/21, 14:28:14:633] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623101294.631 client.shouldReload is ACTIVE 
+[06/07/21, 14:28:14:840] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623101294.631 client.shouldReload is RESOLVED 
+[06/07/21, 14:28:14:841] info: [MIN-VERSION] Build version is enabled for this polling interval. Using build version: 1623090449 
+[06/07/21, 14:28:14:842] info: [MIN-VERSION] No need to reload 
+[06/07/21, 14:30:25:606] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:30:25:606] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:30:31:514] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:30:31:540] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:30:51:516] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:30:51:521] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:31:21:540] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:31:21:543] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:31:31:541] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:31:31:545] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:32:21:577] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:32:21:581] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:33:01:610] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:33:01:613] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:35:11:724] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:35:11:729] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:35:26:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:35:26:601] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:36:21:782] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:36:21:785] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:37:07:216] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D0103USL51B because (1) timestamps added 
+[06/07/21, 14:37:07:216] info: [COUNTS] (T0105PT4A2K) Updated unread_cnt for D0103USL51B: 1 
+[06/07/21, 14:37:07:217] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D0103USL51B after a new message 
+[06/07/21, 14:37:07:218] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because attention not on chat (window_not_focused) 
+[06/07/21, 14:37:07:218] info: [DESKTOP-MIDDLEWARE] (T0105PT4A2K) Forwarding redux payload to desktop ["unreads"] 
+[06/07/21, 14:37:07:220] info: Store: REDUX_UPDATE_FROM_WEBAPP (T0105PT4A2K) Changed keys [unreads] 
+[06/07/21, 14:37:07:277] info: Store: NEW_NOTIFICATION {
+  "id": "T0105PT4A2K_1623101835.000900",
+  "title": "[REDACTED]",
+  "subtitle": "[REDACTED]",
+  "content": "[REDACTED]",
+  "authorName": "[REDACTED]",
+  "avatarImage": "[REDACTED]",
+  "teamId": "T0105PT4A2K",
+  "userId": "U0103USHQBX",
+  "msg": "1623101835.000900",
+  "channel": "D0103USL51B",
+  "channelName": "[REDACTED]",
+  "launchUri": "slack://channel?id=D0103USL51B&message=1623101835.000900&team=T0105PT4A2K",
+  "silent": true,
+  "hasReply": true,
+  "trace_id": "{\"traceId\":\"eb23d92e287ae6df\",\"parentSpanId\":\"eb23d92e287ae6df\"}"
+} 
+[06/07/21, 14:39:41:933] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:39:41:936] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:40:26:604] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:40:26:604] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:40:31:957] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:40:31:961] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:42:09:648] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 14:42:35:202] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:42:35:367] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:42:35:367] info: [CHECK-UNREADS] (T0105PT4A2K) Marking D0103USL51B because unread line is visible 
+[06/07/21, 14:42:35:368] info: [SET-LAST-READ] (T0105PT4A2K) markLastRead D0103USL51B:1623101835.000900, immediate: undefined 
+[06/07/21, 14:42:35:369] info: [SET-LAST-READ] (T0105PT4A2K) delaying D0103USL51B mark by 1357.508364139408ms 
+[06/07/21, 14:42:35:370] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D0103USL51B because last_read changed to 1623101835.000900 
+[06/07/21, 14:42:35:370] info: [COUNTS] (T0105PT4A2K) Updated unread_cnt for D0103USL51B: 0 
+[06/07/21, 14:42:35:376] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102155.375 files.info called with reason: files-store.ConditionalFetchManager.fetch 
+[06/07/21, 14:42:35:376] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102155.375 files.info is ENQUEUED 
+[06/07/21, 14:42:35:377] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102155.375 files.info is ACTIVE 
+[06/07/21, 14:42:35:665] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102155.375 files.info is RESOLVED 
+[06/07/21, 14:42:35:667] info: [DESKTOP-MIDDLEWARE] (T0105PT4A2K) Forwarding redux payload to desktop ["unreads"] 
+[06/07/21, 14:42:35:671] info: Store: REDUX_UPDATE_FROM_WEBAPP (T0105PT4A2K) Changed keys [unreads] 
+[06/07/21, 14:42:36:727] info: [SET-LAST-READ] (T0105PT4A2K) delay resolved, marking D0103USL51B with API 
+[06/07/21, 14:42:36:728] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102156.727 conversations.mark called with reason: viewed 
+[06/07/21, 14:42:36:728] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102156.727 conversations.mark is ENQUEUED 
+[06/07/21, 14:42:36:728] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102156.727 conversations.mark is ACTIVE 
+[06/07/21, 14:42:37:481] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102156.727 conversations.mark is RESOLVED 
+[06/07/21, 14:42:37:986] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Reacting to  {"type":"[399] Starts a download on the desktop app","payload":{"fileId":"F024G3GK0FN","downloadUrl":"[redacted]","showFlexpane":true},"error":false} 
+[06/07/21, 14:42:38:013] info: Store: START_DOWNLOAD {
+  "id": "F024G3GK0FN",
+  "teamId": "T0105PT4A2K",
+  "url": "[REDACTED]",
+  "userId": "U0103USHQBX",
+  "appVersion": "4.16.0"
+} 
+[06/07/21, 14:42:38:014] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 14:42:38:245] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F024G3GK0FN",
+  "downloadState": "progressing",
+  "downloadPath": "[REDACTED]"
+} 
+[06/07/21, 14:42:38:246] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 14:42:38:246] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F024G3GK0FN",
+  "progress": 1,
+  "downloadState": "progressing"
+} 
+[06/07/21, 14:42:38:247] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 14:42:38:249] info: Store: UPDATE_DOWNLOAD {
+  "teamId": "T0105PT4A2K",
+  "id": "F024G3GK0FN",
+  "downloadState": "completed",
+  "endTime": 1623102158248
+} 
+[06/07/21, 14:42:38:249] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["downloads"] 
+[06/07/21, 14:42:39:987] info: [DESKTOP-SIDE-EFFECT] (T0105PT4A2K) Reacting to  {"type":"[407] Shows the folder that contains the downloaded file","payload":"F024G3GK0FN","error":false} 
+[06/07/21, 14:42:39:995] info: [API-Q] (T0105PT4A2K) noversion-1623102159.994 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:42:39:995] info: [API-Q] (T0105PT4A2K) noversion-1623102159.994 Flannel users/info is ENQUEUED 
+[06/07/21, 14:42:39:995] info: [API-Q] (T0105PT4A2K) noversion-1623102159.994 Flannel users/info is ACTIVE 
+[06/07/21, 14:42:40:197] info: [API-Q] (T0105PT4A2K) noversion-1623102159.994 Flannel users/info is RESOLVED 
+[06/07/21, 14:42:41:835] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:43:12:058] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:43:12:063] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:43:22:086] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:43:22:088] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:45:08:613] info: [API-Q] (T0105PT4A2K) noversion-1623102308.610 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:45:08:614] info: [API-Q] (T0105PT4A2K) noversion-1623102308.610 Flannel users/info is ENQUEUED 
+[06/07/21, 14:45:08:614] info: [API-Q] (T0105PT4A2K) noversion-1623102308.610 Flannel users/info is ACTIVE 
+[06/07/21, 14:45:08:739] info: [API-Q] (T0105PT4A2K) noversion-1623102308.610 Flannel users/info is RESOLVED 
+[06/07/21, 14:45:26:630] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:45:26:636] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:46:54:049] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:46:54:080] info: [UPLOAD-QUEUE] (T0105PT4A2K) Starting an upload 
+[06/07/21, 14:46:54:080] info: [UPLOAD-QUEUE] (T0105PT4A2K) Starting eager upload for 180aff59-9a79-49c6-9ee7-8ed8ba9325ca 
+[06/07/21, 14:46:54:081] info: [UPLOAD-QUEUE] (T0105PT4A2K) Preparing to upload 1 file(s) 
+[06/07/21, 14:46:54:081] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.081 files.getUploadURL called with reason: upload-queue 
+[06/07/21, 14:46:54:081] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.081 files.getUploadURL is ENQUEUED 
+[06/07/21, 14:46:54:082] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.081 files.getUploadURL is ACTIVE 
+[06/07/21, 14:46:54:132] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D0103USL51B 
+[06/07/21, 14:46:54:144] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:46:54:144] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:46:54:363] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.081 files.getUploadURL is RESOLVED 
+[06/07/21, 14:46:54:364] info: [UPLOAD-QUEUE] (T0105PT4A2K) Got upload URL and ID F02435Y6WUW 
+[06/07/21, 14:46:54:756] info: [UPLOAD-QUEUE] (T0105PT4A2K) Completed POSTing F02435Y6WUW to upload URL 
+[06/07/21, 14:46:54:756] info: [UPLOAD-QUEUE] (T0105PT4A2K) Finished POST-ing data for 1 file(s) 
+[06/07/21, 14:46:54:759] info: [UPLOAD-QUEUE] (T0105PT4A2K) Uploading F02435Y6WUW - 100% complete 
+[06/07/21, 14:46:54:760] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.759 files.completeUpload called with reason: upload-queue 
+[06/07/21, 14:46:54:760] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.759 files.completeUpload is ENQUEUED 
+[06/07/21, 14:46:54:760] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.759 files.completeUpload is ACTIVE 
+[06/07/21, 14:46:54:962] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102414.759 files.completeUpload is RESOLVED 
+[06/07/21, 14:46:55:530] info: [UPLOAD-QUEUE] (T0105PT4A2K) Successfuly resolved file uploads for: F02435Y6WUW 
+[06/07/21, 14:46:55:530] info: [UPLOAD-QUEUE] (T0105PT4A2K) Marking upload as complete. Pending File Id: 180aff59-9a79-49c6-9ee7-8ed8ba9325ca Persisted File Id: F02435Y6WUW 
+[06/07/21, 14:46:55:531] info: [UPLOAD-QUEUE] (T0105PT4A2K) Upload queue empty 
+[06/07/21, 14:46:55:532] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D0103USL51B 
+[06/07/21, 14:46:55:578] info: [UNKNOWN-FETCH-MANAGER] (T0105PT4A2K) requesting F02435Y6WUW (1) 
+[06/07/21, 14:46:55:578] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.578 files.info called with reason: files-store-unknown-fetch 
+[06/07/21, 14:46:55:579] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.578 files.info is ENQUEUED 
+[06/07/21, 14:46:55:579] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.578 files.info is ACTIVE 
+[06/07/21, 14:46:55:723] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.578 files.info is RESOLVED 
+[06/07/21, 14:46:55:724] info: [UNKNOWN-FETCH-MANAGER] (T0105PT4A2K) received F02435Y6WUW (1) 
+[06/07/21, 14:46:55:888] info: [DRAFTS] Cancelling a pending draft sync - D0103USL51B 
+[06/07/21, 14:46:55:891] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D0103USL51B 
+[06/07/21, 14:46:55:905] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.904 files.share called with reason: send_message_with_files 
+[06/07/21, 14:46:55:905] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.904 files.share is ENQUEUED 
+[06/07/21, 14:46:55:905] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.904 files.share is ACTIVE 
+[06/07/21, 14:46:55:929] info: [DRAFTS] Cancelling a pending draft sync - D0103USL51B 
+[06/07/21, 14:46:56:044] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D0103USL51B because (1) timestamps added 
+[06/07/21, 14:46:56:045] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D0103USL51B after a new message 
+[06/07/21, 14:46:56:045] info: [CHECK-UNREADS] (T0105PT4A2K) Marking D0103USL51B because unread line is visible 
+[06/07/21, 14:46:56:045] info: [SET-LAST-READ] (T0105PT4A2K) markLastRead D0103USL51B:1623102424.001100, immediate: undefined 
+[06/07/21, 14:46:56:047] info: [SET-LAST-READ] (T0105PT4A2K) delaying D0103USL51B mark by 3833.665478103505ms 
+[06/07/21, 14:46:56:047] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D0103USL51B because last_read changed to 1623102424.001100 
+[06/07/21, 14:46:56:104] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102415.904 files.share is RESOLVED 
+[06/07/21, 14:46:56:175] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102416.174 files.info called with reason: files-store.ConditionalFetchManager.fetch 
+[06/07/21, 14:46:56:175] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102416.174 files.info is ENQUEUED 
+[06/07/21, 14:46:56:175] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102416.174 files.info is ACTIVE 
+[06/07/21, 14:46:56:312] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102416.174 files.info is RESOLVED 
+[06/07/21, 14:46:57:929] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:46:59:881] info: [SET-LAST-READ] (T0105PT4A2K) delay resolved, marking D0103USL51B with API 
+[06/07/21, 14:46:59:882] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102419.881 conversations.mark called with reason: viewed 
+[06/07/21, 14:46:59:882] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102419.881 conversations.mark is ENQUEUED 
+[06/07/21, 14:46:59:883] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102419.881 conversations.mark is ACTIVE 
+[06/07/21, 14:47:00:089] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623102419.881 conversations.mark is RESOLVED 
+[06/07/21, 14:47:19:312] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 14:47:19:388] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 14:47:19:388] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 14:47:20:245] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 14:50:27:602] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:50:27:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:51:22:442] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:51:22:474] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:51:32:442] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:51:32:447] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:53:04:604] info: [API-Q] (T0105PT4A2K) noversion-1623102784.602 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 14:53:04:604] info: [API-Q] (T0105PT4A2K) noversion-1623102784.602 Flannel users/info is ENQUEUED 
+[06/07/21, 14:53:04:607] info: [API-Q] (T0105PT4A2K) noversion-1623102784.602 Flannel users/info is ACTIVE 
+[06/07/21, 14:53:04:811] info: [API-Q] (T0105PT4A2K) noversion-1623102784.602 Flannel users/info is RESOLVED 
+[06/07/21, 14:55:28:631] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 14:55:28:634] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 14:57:09:653] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 14:57:12:729] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 14:57:12:732] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 14:57:22:733] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 14:57:22:737] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:00:29:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:00:29:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:01:12:925] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:01:12:929] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:01:52:957] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:01:52:962] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:04:03:067] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:04:03:070] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:05:13:123] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:05:13:128] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:05:29:604] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:05:29:604] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:05:53:145] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:05:53:149] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:07:03:202] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:07:03:204] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:07:30:249] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:07:30:358] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:07:30:358] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 15:07:30:379] info: [PERSIST] (T0105PT4A2K) Successfully persisted state 
+[06/07/21, 15:07:31:441] info: [API-Q] (T0105PT4A2K) noversion-1623103651.440 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 15:07:31:441] info: [API-Q] (T0105PT4A2K) noversion-1623103651.440 Flannel users/info is ENQUEUED 
+[06/07/21, 15:07:31:442] info: [API-Q] (T0105PT4A2K) noversion-1623103651.440 Flannel users/info is ACTIVE 
+[06/07/21, 15:07:31:733] info: [API-Q] (T0105PT4A2K) noversion-1623103651.440 Flannel users/info is RESOLVED 
+[06/07/21, 15:07:36:976] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:08:13:246] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:08:13:249] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:08:33:258] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:08:33:264] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:09:23:299] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:09:23:302] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:10:30:625] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:10:30:630] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:11:33:415] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:11:33:420] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:12:09:651] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 15:12:13:441] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:12:13:443] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:12:23:443] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:12:23:447] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:12:43:453] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:12:43:457] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:14:13:532] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:14:13:537] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:15:31:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:15:31:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:18:43:766] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:18:43:769] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:19:23:798] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:19:23:801] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:19:53:811] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:19:53:815] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:20:03:815] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:20:03:818] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:20:31:604] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:20:31:604] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:20:43:839] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:20:43:842] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:21:03:847] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:21:03:851] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:21:23:861] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:21:23:863] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:22:53:928] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:22:53:933] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:23:53:977] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:23:53:982] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:25:32:601] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:25:32:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:26:04:085] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:26:04:088] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:26:23:137] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:26:23:201] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:26:23:204] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 15:26:23:210] info: [API-Q] (T0105PT4A2K) noversion-1623104783.209 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 15:26:23:210] info: [API-Q] (T0105PT4A2K) noversion-1623104783.209 Flannel users/info is ENQUEUED 
+[06/07/21, 15:26:23:210] info: [API-Q] (T0105PT4A2K) noversion-1623104783.209 Flannel users/info is ACTIVE 
+[06/07/21, 15:26:23:247] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 15:26:23:443] info: [API-Q] (T0105PT4A2K) noversion-1623104783.209 Flannel users/info is RESOLVED 
+[06/07/21, 15:26:26:598] info: [ACTION:CHANNEL-SIDEBAR] Selected D016UB9PAEN 
+[06/07/21, 15:26:26:599] info: [CHANNEL-SIDEBAR] (T0105PT4A2K) onItemSelect D016UB9PAEN 
+[06/07/21, 15:26:26:599] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D016UB9PAEN"} 
+[06/07/21, 15:26:26:647] info: [HISTORY-NAVIGATION] Adding route to the history stack 
+[06/07/21, 15:26:26:648] info: [SWITCH-TO-CHANNEL] (T0105PT4A2K) Switching to D016UB9PAEN at end 
+[06/07/21, 15:26:26:648] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 15:26:26:661] info: [MESSAGE-LIST] (T0105PT4A2K) getScrollmark reason:channel_change channelId:D0103USL51B at end 
+[06/07/21, 15:26:26:663] info: [MESSAGE-LIST] (T0105PT4A2K) Switching channels: D016UB9PAEN timestamps: 0 
+[06/07/21, 15:26:26:663] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:663] info: [HISTORY-FETCH] (T0105PT4A2K) Fetching history for message pane: D016UB9PAEN oldest: null latest: null 
+[06/07/21, 15:26:26:664] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104786.664 conversations.history called with reason: message-pane/requestHistory 
+[06/07/21, 15:26:26:665] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104786.664 conversations.history is ENQUEUED 
+[06/07/21, 15:26:26:665] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104786.664 conversations.history is ACTIVE 
+[06/07/21, 15:26:26:685] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:686] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:710] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:717] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:717] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:721] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 15:26:26:722] info: [API-Q] (T0105PT4A2K) noversion-1623104786.721 Flannel permissions/info called with reason: flannel-call:permissions/info 
+[06/07/21, 15:26:26:722] info: [API-Q] (T0105PT4A2K) noversion-1623104786.721 Flannel permissions/info is ENQUEUED 
+[06/07/21, 15:26:26:722] info: [API-Q] (T0105PT4A2K) noversion-1623104786.721 Flannel permissions/info is ACTIVE 
+[06/07/21, 15:26:26:723] info: [API-Q] (T0105PT4A2K) noversion-1623104786.723 Flannel users/counts called with reason: flannel-call:users/counts 
+[06/07/21, 15:26:26:723] info: [API-Q] (T0105PT4A2K) noversion-1623104786.723 Flannel users/counts is ENQUEUED 
+[06/07/21, 15:26:26:723] info: [API-Q] (T0105PT4A2K) noversion-1623104786.723 Flannel users/counts is ACTIVE 
+[06/07/21, 15:26:26:724] info: [MESSAGE-LIST] (T0105PT4A2K) requestAround channelId: D016UB9PAEN isLoading: false timestamps: 0 reachedStart: false reachedEnd: false 
+[06/07/21, 15:26:26:730] info: [MESSAGE-LIST] (T0105PT4A2K) componentWillReceiveProps isLoading: true isLoadingOlder: false timestamps: 0 
+[06/07/21, 15:26:26:790] info: [API-Q] (T0105PT4A2K) noversion-1623104786.721 Flannel permissions/info is RESOLVED 
+[06/07/21, 15:26:26:810] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104786.664 conversations.history is RESOLVED 
+[06/07/21, 15:26:26:814] info: [PLATFORM-CHANNEL-ACTI] (T0105PT4A2K) setting count for channel D016UB9PAEN to 0, and marking channel as stale. 
+[06/07/21, 15:26:26:816] info: [PINS] (T0105PT4A2K) Pins count updated for channel D016UB9PAEN: 0 
+[06/07/21, 15:26:26:818] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (28) timestamps added 
+[06/07/21, 15:26:26:819] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:26:26:819] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:26:26:831] info: [MESSAGE-LIST] (T0105PT4A2K) componentWillReceiveProps isLoading: false isLoadingOlder: false timestamps: 28 
+[06/07/21, 15:26:26:882] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 15:26:27:023] info: Jun-7 15:26:27.220 [SERVICE-WORKER] responding with fetch https://slack-imgs.com/ 
+{
+  "versionId": 0
+}
+[06/07/21, 15:26:27:026] info: [API-Q] (T0105PT4A2K) noversion-1623104786.723 Flannel users/counts is RESOLVED 
+[06/07/21, 15:26:27:371] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 15:26:27:371] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:26:27:688] info: [API-Q] (T0105PT4A2K) noversion-1623104787.687 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 15:26:27:688] info: [API-Q] (T0105PT4A2K) noversion-1623104787.687 Flannel users/search is ENQUEUED 
+[06/07/21, 15:26:27:688] info: [API-Q] (T0105PT4A2K) noversion-1623104787.687 Flannel users/search is ACTIVE 
+[06/07/21, 15:26:27:766] info: [API-Q] (T0105PT4A2K) noversion-1623104787.687 Flannel users/search is RESOLVED 
+[06/07/21, 15:26:27:795] info: [API-Q] (T0105PT4A2K) noversion-1623104787.795 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 15:26:27:795] info: [API-Q] (T0105PT4A2K) noversion-1623104787.795 Flannel users/info is ENQUEUED 
+[06/07/21, 15:26:27:796] info: [API-Q] (T0105PT4A2K) noversion-1623104787.795 Flannel users/info is ACTIVE 
+[06/07/21, 15:26:27:831] info: [API-Q] (T0105PT4A2K) noversion-1623104787.795 Flannel users/info is RESOLVED 
+[06/07/21, 15:26:33:606] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D016UB9PAEN 
+[06/07/21, 15:26:35:934] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D016UB9PAEN 
+[06/07/21, 15:26:40:131] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D016UB9PAEN 
+[06/07/21, 15:26:49:780] info: [DRAFTS] (T0105PT4A2K) Storing draft changes locally - D016UB9PAEN 
+[06/07/21, 15:26:55:043] info: [DRAFTS] Cancelling a pending draft sync - D016UB9PAEN 
+[06/07/21, 15:26:55:064] info: [ACTION:MESSAGE] (T0105PT4A2K) Sent a message to D016UB9PAEN via HTTP, clientMsgId: e58ef92a-27d5-4929-ba0f-ee7e1609a2b2 
+[06/07/21, 15:26:55:064] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Enqueueing message with clientMsgId e58ef92a-27d5-4929-ba0f-ee7e1609a2b2, queue has 1 messages 
+[06/07/21, 15:26:55:065] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Sending message with clientMsgId e58ef92a-27d5-4929-ba0f-ee7e1609a2b2 
+[06/07/21, 15:26:55:066] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104815.065 chat.postMessage called with reason: webapp_message_send 
+[06/07/21, 15:26:55:066] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104815.065 chat.postMessage is ENQUEUED 
+[06/07/21, 15:26:55:066] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104815.065 chat.postMessage is ACTIVE 
+[06/07/21, 15:26:55:067] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Shifting queue, now has 0 messages 
+[06/07/21, 15:26:55:069] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:26:55:069] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:26:55:070] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:26:55:722] info: [ACTION:MESSAGE] (T0105PT4A2K) Resolved a message with clientMsgId e58ef92a-27d5-4929-ba0f-ee7e1609a2b2 in D016UB9PAEN with ts 1623104823.002200 
+[06/07/21, 15:26:55:724] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Resolving active request with clientMsgId e58ef92a-27d5-4929-ba0f-ee7e1609a2b2 
+[06/07/21, 15:26:55:726] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:26:55:727] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because message removed 
+[06/07/21, 15:26:55:727] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:26:55:727] info: [CHECK-UNREADS] (T0105PT4A2K) Marking D016UB9PAEN because unread line is visible 
+[06/07/21, 15:26:55:728] info: [SET-LAST-READ] (T0105PT4A2K) markLastRead D016UB9PAEN:1623104823.002200, immediate: undefined 
+[06/07/21, 15:26:55:729] info: [SET-LAST-READ] (T0105PT4A2K) delaying D016UB9PAEN mark by 2306.76014574268ms 
+[06/07/21, 15:26:55:729] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because last_read changed to 1623104823.002200 
+[06/07/21, 15:26:55:841] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104815.065 chat.postMessage is RESOLVED 
+[06/07/21, 15:26:57:029] info: [ACTION:MESSAGE] (T0105PT4A2K) Sent a message to D016UB9PAEN via HTTP, clientMsgId: 4fab52fc-9ca6-4b22-95b7-ecb162776f53 
+[06/07/21, 15:26:57:030] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Enqueueing message with clientMsgId 4fab52fc-9ca6-4b22-95b7-ecb162776f53, queue has 1 messages 
+[06/07/21, 15:26:57:030] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Sending message with clientMsgId 4fab52fc-9ca6-4b22-95b7-ecb162776f53 
+[06/07/21, 15:26:57:030] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104817.029 chat.postMessage called with reason: webapp_message_send 
+[06/07/21, 15:26:57:031] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104817.029 chat.postMessage is ENQUEUED 
+[06/07/21, 15:26:57:031] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104817.029 chat.postMessage is ACTIVE 
+[06/07/21, 15:26:57:031] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Shifting queue, now has 0 messages 
+[06/07/21, 15:26:57:031] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:26:57:031] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:26:57:032] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:26:57:252] info: [ACTION:MESSAGE] (T0105PT4A2K) Resolved a message with clientMsgId 4fab52fc-9ca6-4b22-95b7-ecb162776f53 in D016UB9PAEN with ts 1623104825.002400 
+[06/07/21, 15:26:57:253] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Resolving active request with clientMsgId 4fab52fc-9ca6-4b22-95b7-ecb162776f53 
+[06/07/21, 15:26:57:254] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:26:57:254] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because message removed 
+[06/07/21, 15:26:57:285] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104817.029 chat.postMessage is RESOLVED 
+[06/07/21, 15:26:57:351] info: [SET-LAST-READ] (T0105PT4A2K) cancelling delayed mark for D016UB9PAEN 
+[06/07/21, 15:26:57:352] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because last_read changed to 1623104825.002400 
+[06/07/21, 15:26:57:531] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:26:57:531] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:27:23:730] info: [RTM] (T0105PT4A2K) Processed 1 presence_change event(s) over 25.00ms 
+[06/07/21, 15:27:24:309] info: [ACTION:MESSAGE] (T0105PT4A2K) Sent a message to D016UB9PAEN via HTTP, clientMsgId: 3013bff0-0dad-4781-a5b0-5f2d8889831f 
+[06/07/21, 15:27:24:310] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Enqueueing message with clientMsgId 3013bff0-0dad-4781-a5b0-5f2d8889831f, queue has 1 messages 
+[06/07/21, 15:27:24:310] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Sending message with clientMsgId 3013bff0-0dad-4781-a5b0-5f2d8889831f 
+[06/07/21, 15:27:24:311] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104844.310 chat.postMessage called with reason: webapp_message_send 
+[06/07/21, 15:27:24:311] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104844.310 chat.postMessage is ENQUEUED 
+[06/07/21, 15:27:24:311] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104844.310 chat.postMessage is ACTIVE 
+[06/07/21, 15:27:24:312] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Shifting queue, now has 0 messages 
+[06/07/21, 15:27:24:312] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:27:24:312] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:27:24:313] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:27:24:473] info: [ACTION:MESSAGE] (T0105PT4A2K) Resolved a message with clientMsgId 3013bff0-0dad-4781-a5b0-5f2d8889831f in D016UB9PAEN with ts 1623104852.003000 
+[06/07/21, 15:27:24:474] info: [ACTION:MESSAGE-Q] (T0105PT4A2K) Resolving active request with clientMsgId 3013bff0-0dad-4781-a5b0-5f2d8889831f 
+[06/07/21, 15:27:24:475] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because (1) timestamps added 
+[06/07/21, 15:27:24:475] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because message removed 
+[06/07/21, 15:27:24:505] info: [API-Q] (T0105PT4A2K) d94f5c3f-1623104844.310 chat.postMessage is RESOLVED 
+[06/07/21, 15:27:24:573] info: [UNREAD-COUNTS] (T0105PT4A2K) Counting unreads in D016UB9PAEN because last_read changed to 1623104852.003000 
+[06/07/21, 15:27:24:813] info: [UNREAD-COUNTS] (T0105PT4A2K) Checking unreads in D016UB9PAEN after a new message 
+[06/07/21, 15:27:24:813] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:27:54:137] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:27:54:166] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:28:27:458] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: true -> false 
+[06/07/21, 15:28:27:692] info: Jun-7 15:28:27.692 [SERVICE-WORKER] responding with fetch https://slack-imgs.com/ 
+{
+  "versionId": 0
+}
+[06/07/21, 15:28:31:540] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:28:34:161] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:28:34:166] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:28:44:408] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 15:28:44:761] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 15:28:44:761] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because attention not on chat (window_not_focused) 
+[06/07/21, 15:29:14:191] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:29:14:196] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:30:04:257] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:30:04:259] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:30:24:244] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:30:24:248] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:30:32:625] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:30:32:627] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:31:34:302] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:31:34:307] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:33:12:658] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:33:12:738] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:33:12:738] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:33:22:678] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:33:54:407] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:33:54:434] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:34:22:873] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:34:22:940] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:34:22:941] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:34:24:444] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:34:24:445] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:34:41:031] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:35:24:484] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:35:24:484] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:35:32:653] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:35:32:659] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:36:24:532] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:36:24:534] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:36:54:530] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:36:54:535] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:37:04:555] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:37:04:557] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:37:34:553] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:37:34:558] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:37:46:172] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:37:46:271] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:37:46:272] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:37:54:554] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:37:54:559] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:38:14:567] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:38:14:572] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:38:25:524] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:38:34:572] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:38:34:576] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:39:23:727] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:39:23:829] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:39:23:829] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:39:44:657] info: [API-Q] (T0105PT4A2K) noversion-1623105584.656 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 15:39:44:657] info: [API-Q] (T0105PT4A2K) noversion-1623105584.656 Flannel users/info is ENQUEUED 
+[06/07/21, 15:39:44:657] info: [API-Q] (T0105PT4A2K) noversion-1623105584.656 Flannel users/info is ACTIVE 
+[06/07/21, 15:39:44:858] info: [API-Q] (T0105PT4A2K) noversion-1623105584.656 Flannel users/info is RESOLVED 
+[06/07/21, 15:39:54:646] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:39:54:653] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:40:32:685] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:40:32:691] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:41:08:785] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 
+[06/07/21, 15:44:14:844] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:44:14:849] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:44:34:857] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:44:34:863] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:44:44:883] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:44:44:885] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:44:44:924] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:45:33:602] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:45:33:602] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:47:14:976] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:47:14:981] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:47:24:979] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:47:24:982] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:48:15:018] info: Store: SET_SYSTEM_IDLE idle_taskbar 
+[06/07/21, 15:48:15:023] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:48:35:030] info: Store: SET_SYSTEM_IDLE active 
+[06/07/21, 15:48:35:035] info: [DESKTOP-SIDE-EFFECT] Update from desktop for keys  ["app"] 
+[06/07/21, 15:49:26:172] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:49:26:255] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:49:26:256] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:50:01:441] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: true -> false 
+[06/07/21, 15:50:05:460] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 15:50:05:812] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 15:50:05:812] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:50:20:866] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:50:33:625] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:50:33:631] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:50:39:500] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:50:39:579] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:50:39:579] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:50:40:706] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: true -> false 
+[06/07/21, 15:50:42:943] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:51:28:147] info: [FOCUS-EVENT] Client window focused 
+[06/07/21, 15:51:28:237] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after window became focused 
+[06/07/21, 15:51:28:238] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D016UB9PAEN because last_read >= latest && channel is read 
+[06/07/21, 15:51:29:671] info: [ACTION:CHANNEL-SIDEBAR] Selected D0103USL51B 
+[06/07/21, 15:51:29:672] info: [CHANNEL-SIDEBAR] (T0105PT4A2K) onItemSelect D0103USL51B 
+[06/07/21, 15:51:29:677] info: [ROUTES] [ROUTE_ENTITY] Attempting to navigate to new route {"teamId":"T0105PT4A2K","entityId":"D0103USL51B"} 
+[06/07/21, 15:51:29:723] info: [HISTORY-NAVIGATION] Adding route to the history stack 
+[06/07/21, 15:51:29:724] info: [SWITCH-TO-CHANNEL] (T0105PT4A2K) Switching to D0103USL51B at end 
+[06/07/21, 15:51:29:724] info: [ROUTES] [ROUTE_ENTITY] Navigated to new route 
+[06/07/21, 15:51:29:739] info: [MESSAGE-LIST] (T0105PT4A2K) getScrollmark reason:channel_change channelId:D016UB9PAEN state.hasKeyboardFocus:false props.hasKeyboardFocus:false initialActiveItem:1616192388.000500 mark:1616192388.000500 offset:618.703125 
+[06/07/21, 15:51:29:740] info: [MESSAGE-LIST] (T0105PT4A2K) Switching channels: D0103USL51B timestamps: 30 
+[06/07/21, 15:51:29:923] info: [CHECK-UNREADS] (T0105PT4A2K) unreadLineVisible updated: false -> true 
+[06/07/21, 15:51:30:003] info: Store: EXTEND_MENU T0105PT4A2K: menucategory-file,menucategory-edit,menucategory-history,menucategory-help 
+[06/07/21, 15:51:30:349] info: [CHECK-UNREADS] (T0105PT4A2K) Checking unreads after unread line became visible 
+[06/07/21, 15:51:30:349] info: [CHECK-UNREADS] (T0105PT4A2K) Not marking D0103USL51B because last_read >= latest && channel is read 
+[06/07/21, 15:51:30:917] info: [API-Q] (T0105PT4A2K) noversion-1623106290.916 Flannel users/search called with reason: flannel-call:users/search 
+[06/07/21, 15:51:30:917] info: [API-Q] (T0105PT4A2K) noversion-1623106290.916 Flannel users/search is ENQUEUED 
+[06/07/21, 15:51:30:918] info: [API-Q] (T0105PT4A2K) noversion-1623106290.916 Flannel users/search is ACTIVE 
+[06/07/21, 15:51:31:112] info: [API-Q] (T0105PT4A2K) noversion-1623106290.916 Flannel users/search is RESOLVED 
+[06/07/21, 15:51:32:906] info: [FOCUS-EVENT] Client window blurred 
+[06/07/21, 15:52:25:226] info: [API-Q] (T0105PT4A2K) noversion-1623106345.225 Flannel users/info called with reason: flannel-call:users/info 
+[06/07/21, 15:52:25:227] info: [API-Q] (T0105PT4A2K) noversion-1623106345.225 Flannel users/info is ENQUEUED 
+[06/07/21, 15:52:25:227] info: [API-Q] (T0105PT4A2K) noversion-1623106345.225 Flannel users/info is ACTIVE 
+[06/07/21, 15:52:25:293] info: [API-Q] (T0105PT4A2K) noversion-1623106345.225 Flannel users/info is RESOLVED 
+[06/07/21, 15:55:34:627] info: [DND] (T0105PT4A2K) Checking for changes in DND status for the following members: UV552A1L2,UV6E1U1L3,U01064Z6WQ6,U0105Q70NLF,U016A4UTZBP,U01AHCM24S2,U0103ETT2GL,U0103USHQBX,U01064PGAA2,U010650A7ML 
+[06/07/21, 15:55:34:631] info: [DND] (T0105PT4A2K) Will check for changes in DND status again in 5 minutes 
+[06/07/21, 15:57:09:655] info: [CHECK-FOR-OLD-IMS] (T0105PT4A2K) Within limit: 11 

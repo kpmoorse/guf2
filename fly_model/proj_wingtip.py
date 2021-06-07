@@ -1,11 +1,5 @@
-import pybullet as p
-import time
-import pybullet_data
-import pandas as pd
 import numpy as np
 from numpy import sin, cos, pi
-import csv
-from qfunc import *
 import matplotlib.pyplot as plt
 import modes
 

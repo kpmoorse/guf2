@@ -1,8 +1,6 @@
-import time
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import ImageColor
 
 def npread(file, sep=',', header=None):
     df = pd.read_csv(file, sep=sep, header=header)
@@ -107,7 +105,7 @@ def calc_kinematics(a, X, b, cmd):
 if __name__ == '__main__':
 
 	a, X, b = read_modes()
-	legendre = init_legendre()
+	# legendre = init_legendre()
 
 	angles = ["phi", "theta", "eta"]
 	c = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -116,8 +114,8 @@ if __name__ == '__main__':
 	for i, x in enumerate(np.arange(0,6e-5,1e-5)):
 		for j in range(3):
 			plt.subplot(211)
-			plt.plot(calc_legendre(legendre, x)[:,j], color=c[j])
+			# plt.plot(calc_legendre(legendre, x)[:,j], color=c[j])
 			plt.subplot(212)
-			plt.plot(calc_kinematics(a,X,b,[x])[:,j], color=c[j])
+			plt.plot(calc_kinematics(a,X,b,[0,0,0,0,0,x])[:,j], color=c[j])
 
 	plt.show()
