@@ -50,6 +50,14 @@ def worldPlusEuler(bodyId, linkId, euler):
     )
     return pos, orn
 
+# Rotate a vector by a quaternion
+def rotate(v, q):
+    qm = p.getMatrixFromQuaternion(q)
+    qm = np.reshape(qm, [3,3])
+
+    return np.dot(qm, v)
+
+
 def qAngle(q1, q2):
     v1 = q2vec(q1)
     v2 = q2vec(q2)

@@ -28,6 +28,7 @@ fly.reset()
 
 N = 5
 mag_list = np.arange(-N,N+1)*1e-5
+# mag_list = mag_list[::-1]
 forces = []
 torques = []
 for i in range(6):
@@ -40,10 +41,13 @@ for i, cmd in enumerate(tqdm(cmd_mask)):
     for mag in tqdm(mag_list, leave=False):
         fly.cmd = cmd*mag
         # Loop over simulation timesteps
-        for j in tqdm(range(100), leave=False):
+        for j in tqdm(range(200), leave=False):
             fly.step_simulation()
-        forces[i] = np.hstack((forces[i], np.mean(fly.forces, axis=0)[:,None]))
-        torques[i] = np.hstack((torques[i], np.mean(fly.torques, axis=0)[:,None]))
+        # plt.plot(fly.forces)
+        # plt.plot(fly.torques)
+        # plt.show()
+        forces[i] = np.hstack((forces[i], np.mean(fly.forces[100:], axis=0)[:,None]))
+        torques[i] = np.hstack((torques[i], np.mean(fly.torques[100:], axis=0)[:,None]))
         fly.reset()
 # forces = np.transpose(np.array(forces))
 # print(forces)
@@ -54,7 +58,7 @@ for f, t in zip(forces, torques):
 max_val *= 1.1
 
 # # Plot Fy mode
-i = 1
+# i = 1
 # for j, f in enumerate(forces[i]):
 #     line, = plt.plot(mag_list*1e5, f-f[N], '.-')
 #     if i == j:

@@ -2,14 +2,14 @@ import numpy as np
 from stl import mesh
 import pybullet as p
 
-fly = p.loadURDF("fly.urdf", [0,0,0], p.getQuaternionFromEuler([0,0,0]))
+# fly = p.loadURDF("fly.urdf", [0,0,0], p.getQuaternionFromEuler([0,0,0]))
 
 def get_link_cog(file):
-	mesh = mesh.Mesh.from_file(file)
-	_, cog, _ = your_mesh.get_mass_properties()
+	stl = mesh.Mesh.from_file(file)
+	_, cog, _ = stl.get_mass_properties()
 	return cog
 
-print(get_link_cog("thorax.stl"))
+# print(get_link_cog("thorax.stl"))
 
 # Inertail matrix calculation is also available:
 

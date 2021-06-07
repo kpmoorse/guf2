@@ -96,7 +96,7 @@ class Fly(object):
         for i, joint in enumerate(self.motor_list):
             p.resetJointState(self.flyId, joint, self.calc_legendre(i%self.wk_len)[0][i])
 
-        self.calc_com()
+        self.cog = calc_cog(0.5,np.array([1,0,0]))
 
         self.sim_time = 0
 
@@ -139,6 +139,13 @@ class Fly(object):
                 (0,5,0),
                 p.LINK_FRAME
                 )
+
+        # Calculate rotated center of gravity, relative to body origin
+        rot_mat = p.getMatrixFromQuaternion(p.getBasePositionAndOrientation(self.flyId)[1])
+        rot_mat = np.reshape(np.array(rot_mat),[3,3])
+        rot_cog = np.dot(rot_mat, self.cog)
+        # print(self.cog)
+        # print(rot_cog)
 
         ##### Apply quasisteady model to left wing #####
 
@@ -186,22 +193,22 @@ class Fly(object):
             drag = self.calc_drag(self.aoa[0], wlVel)
             lift = self.calc_lift(self.aoa[0], wlVel, span, flip)
             frot = self.calc_frot(self.aoa_dot[0], wlVel, normal, flip)
-            # print((self.apply_forces, i))
+
             if self.apply_forces and self.i>10:
-                net_force = lift+drag+frot
+                force = lift+drag+frot
                 # if i == self.N_wbe-1:
                 #     net_force *= 0.0
                 p.applyExternalForce(
                     self.flyId,
                     self.link_dict["wingL"],
-                    net_force,
+                    force,
                     cpAbs,
                     p.WORLD_FRAME
                     )
 
             # Accumulate forces and torques
             net_force += lift+drag
-            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]))
+            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]+rot_cog))
             net_torque += np.cross(lever, lift+drag)
         
         # p.resetBasePositionAndOrientation(self.mkGrnId1, wing_pos, vec2q(lift+drag))
@@ -218,8 +225,9 @@ class Fly(object):
             worldPlusVector(self.flyId,self.link_dict["wingR"],[0,0,0],[0,0,1])[1],
             vec2q(wlVel_base)
         )
-        self.aoa_dot[0] = (self.aoa[0] - aoa_last)/self.dt
+        self.aoa_dot[1] = (self.aoa[1] - aoa_last)/self.dt
 
+        # Calculate center of pressure coefficient
         xcp = 0.82*abs(self.aoa[1])/np.pi + 0.05
 
         # Loop over wingblade elements
@@ -252,16 +260,17 @@ class Fly(object):
             #     print(lift)
             # if not init:
             if self.apply_forces and self.i>10:
+                force = lift+drag+frot
                 p.applyExternalForce(
                     self.flyId,
                     self.link_dict["wingR"],
-                    lift+drag+frot,
+                    force,
                     cpAbs,
                     p.WORLD_FRAME
                     )
 
             net_force += lift+drag
-            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]))
+            lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]+rot_cog))
             net_torque += np.cross(lever, lift+drag)
 
         # p.resetBasePositionAndOrientation(self.mkGrnId2, wing_pos, vec2q(lift+drag))
@@ -355,13 +364,22 @@ def npwrite(arr, file):
     df = pd.DataFrame(arr)
     df.to_csv(file, header=False, index=False)
 
+def calc_cog(m, ctr):
+    cog = np.array([0.,0.,0.])
+    cog += (np.array([0.21891405,  0.00028719, -0.06895534])) * 1.0 # Thorax
+    cog += (np.array([2.68651766e-01, -5.60478757e-05,  1.11634186e-03]) + np.array([0.7, 0, 0.4])) * 1.0 # Head
+    cog += (np.array([-7.34098503e-01, -4.75165506e-09,  3.17227650e-02]) + np.array([-0.25, 0, -0.2])) * 1.0 # Abdomen
+    cog += ctr * m
+    return cog
+
+
 if __name__ == "__main__":
 
     mag = -2
 
     flyStartPos = [0,0,4]
     flyStartOrn = p.getQuaternionFromEuler([0,0,0])
-    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=1, cmd=(0,0,0,0,0,1e-4))
+    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=1, cmd=(0,0,0,0,0,0))
     aoa = []
     for i in range(10000):
         fly.step_simulation()

@@ -9,14 +9,14 @@
 		<visual>
 			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://thorax.dae"/>
+				<mesh filename="thorax.dae"/>
 			</geometry>
 		</visual>
 		
 		<collision>
 			<origin rpy="0 -0.75 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://thorax.dae"/>
+				<mesh filename="thorax.dae"/>
 			</geometry>
 		</collision>
 		
@@ -105,7 +105,7 @@
 		</collision>
 		
 		<inertial>
-			<mass value="0.01"/>
+			<mass value="0.001"/>
 			<inertia  ixx="0.004100527686064244" ixy="0" ixz="0" iyy="0.0007656738107781564" iyz="0" izz="0.0048662014968424" />
 			<!--
 			<origin xyz="0 1.25 0"/>
@@ -135,7 +135,7 @@
 		</collision>
 		
 		<inertial>
-			<mass value="0.01"/>
+			<mass value="0.001"/>
 			<inertia  ixx="0.004100527686064244" ixy="0" ixz="0" iyy="0.0007656738107781564" iyz="0" izz="0.0048662014968424" />
 			<!--
 			<origin xyz="0 1.25 0"/>
@@ -193,7 +193,7 @@
 			<geometry>
 				<sphere radius="0.2"/>
 			</geometry>
-			<origin xyz="0 0 1"/>
+			<origin xyz="0 0 0"/>
 		</visual>
 		
 		<inertial>

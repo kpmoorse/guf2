@@ -82,6 +82,7 @@ for j in tqdm(range(1000)):
 		)
 
 	cmd = net.step(yaw/np.pi)*1e-3
+	cmd = 0
 	fly.cmd = [0,0,0,0,0,cmd]
 
 state = np.array(state)

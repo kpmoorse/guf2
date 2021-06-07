@@ -59,8 +59,8 @@ def read_modes():
 				"MxP": npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
 				"MyN": npread('legendre/torques/b_MyU_{}.csv'.format(angle)),
 				"MyP": -npread('legendre/torques/b_MyD_{}.csv'.format(angle)),
-				"MzN": npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing)),
-				"MzP": npread('legendre/torques/b_MzR_{}{}.csv'.format(angle, wing))
+				"MzN": -npread('legendre/torques/b_MzR_{}{}.csv'.format(angle, wing)),
+				"MzP": -npread('legendre/torques/b_MzL_{}{}.csv'.format(angle, wing))
 
 				# "MxN": -npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
 				# "MxP": npread('legendre/torques/b_MxR_{}{}.csv'.format(angle, wing)),
