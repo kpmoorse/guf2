@@ -23,8 +23,13 @@ class Fly(object):
         self.global_state = np.empty((0,6)) # x, y ,z, roll, pitch, yaw
         self.hinge_state = np.empty((0,6)) # posL, devL, rotL, posR, devR, rotR
 
+        self.lifts = np.empty((0,2)) # left, right
+        self.drags = np.empty((0,2)) # left, right
+
         self.forces = np.empty((0,3)) # Fx, Fy, Fz
         self.torques = np.empty((0,3)) # Tx, Ty, Tz
+
+        self.forces_separated = np.empty((0,6))
 
         self.aoa = [0,0] # Angle of attack [left, right]
         self.aoa_dot = [0,0] # Rate of change of aoa
@@ -110,6 +115,9 @@ class Fly(object):
 
         p.removeAllUserDebugItems()
 
+        lifts = np.zeros(2)
+        drags = np.zeros(2)
+
         net_force = np.zeros(3)
         net_torque = np.zeros(3)
 
@@ -130,15 +138,15 @@ class Fly(object):
             forces=[1e10]*6
             )
 
-        # Apply stabilizing external torque
-        if self.apply_forces:
-            p.applyExternalTorque(
-                self.flyId,
-                -1,
-                # (0,8.5,0),
-                (0,5,0),
-                p.LINK_FRAME
-                )
+        # # Apply stabilizing external torque
+        # if self.apply_forces:
+        #     p.applyExternalTorque(
+        #         self.flyId,
+        #         -1,
+        #         # (0,8.5,0),
+        #         (0,5,0),
+        #         p.LINK_FRAME
+        #         )
 
         # Calculate rotated center of gravity, relative to body origin
         rot_mat = p.getMatrixFromQuaternion(p.getBasePositionAndOrientation(self.flyId)[1])
@@ -194,6 +202,7 @@ class Fly(object):
             drag = self.calc_drag(self.aoa[0], wlVel)
             lift = self.calc_lift(self.aoa[0], wlVel, span, flip)
             frot = self.calc_frot(self.aoa_dot[0], wlVel, normal, flip)
+            # print((np.linalg.norm(drag),np.linalg.norm(lift),np.linalg.norm(frot)))
 
             if self.apply_forces and self.i>10:
                 force = lift+drag+frot
@@ -207,10 +216,13 @@ class Fly(object):
                     p.WORLD_FRAME
                     )
 
+            lifts[1] = np.linalg.norm(lift)
+            drags[1] = np.linalg.norm(drag)
+
             # Accumulate forces and torques
-            net_force += lift+drag
+            net_force += lift+drag+frot
             lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]+rot_cog))
-            net_torque += np.cross(lever, lift+drag)
+            net_torque += np.cross(lever, lift+drag+frot)
         
         # p.resetBasePositionAndOrientation(self.mkGrnId1, wing_pos, vec2q(lift+drag))
 
@@ -271,15 +283,21 @@ class Fly(object):
                     p.WORLD_FRAME
                     )
 
-            net_force += lift+drag
+            lifts[0] = np.linalg.norm(lift)
+            drags[0] = np.linalg.norm(drag)
+
+            net_force += lift+drag+frot
             lever = np.array(cpAbs - np.array(p.getBasePositionAndOrientation(self.flyId)[0]+rot_cog))
-            net_torque += np.cross(lever, lift+drag)
+            net_torque += np.cross(lever, lift+drag+frot)
 
         # p.resetBasePositionAndOrientation(self.mkGrnId2, wing_pos, vec2q(lift+drag))
 
         p.stepSimulation()
         self.sim_time += self.dt
         time.sleep(self.dt)
+
+        self.lifts = np.append(self.lifts, lifts[None,:], 0)
+        self.drags = np.append(self.drags, drags[None,:], 0)
 
         self.forces = np.append(self.forces, net_force[None,:], 0)
         self.torques = np.append(self.torques, net_torque[None,:], 0)
@@ -317,7 +335,7 @@ class Fly(object):
         vel = np.array(vel)
 
         cR = 1.55
-        frot = cR * aoa_dot * np.linalg.norm(vel) * normal * 0.001
+        frot = cR * aoa_dot * np.linalg.norm(vel) * normal * 0.004
 
         return frot
 
@@ -376,9 +394,9 @@ if __name__ == "__main__":
 
     flyStartPos = [0,0,4]
     flyStartOrn = p.getQuaternionFromEuler([0,0,0])
-    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=0, cmd=(0,0,0,0,0,0))
+    fly = Fly(flyStartPos, flyStartOrn, gui=0, apply_forces=0, cmd=(0,0,0,0,0,0))
     aoa = []
-    for i in range(200):
+    for i in range(100):
         fly.step_simulation()
         # aoa.append(fly.aoa)
 
@@ -394,7 +412,14 @@ if __name__ == "__main__":
 
     # npwrite(f,'res_pos/my_{}.csv'.format(tag))
 
-    wb = np.arange(fly.forces.shape[0])/100
-    plt.plot(wb,fly.forces)
-    plt.legend(["x","y","z"])
-    plt.show()
+    # # plt.plot(fly.wingstate[:100,:3])
+    # plt.plot(fly.wingstate[:,0],fly.wingstate[:,1])
+    # for i in range(100):
+    #     plt.arrow(
+    #         fly.wingstate[i,0],
+    #         fly.wingstate[i,1],
+    #         fly.drags[i,0]*0.01,
+    #         fly.lifts[i,0]*0.01
+    #     )
+    # plt.gca().set_aspect('equal')
+    # plt.show()
