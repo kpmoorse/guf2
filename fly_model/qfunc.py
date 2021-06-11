@@ -57,8 +57,14 @@ def rotate(v, q):
 
     return np.dot(qm, v)
 
-
+# Angle between two vectors, from Will's implementation
 def qAngle(q1, q2):
     v1 = q2vec(q1)
     v2 = q2vec(q2)
-    return np.arccos(v1.dot(v2))
+
+    if np.linalg.norm(v1)==0 or np.linalg.norm(v2)==0:
+        return 0.
+    
+    denom = np.dot(v1, v2)
+    num = np.linalg.norm(np.cross(v1,v2))
+    return np.arctan2(num, denom)

@@ -119,7 +119,7 @@ class Fly(object):
         if self.apply_forces:
             target = self.linramp(self.sim_time, target, 100*self.dt)
 
-        flip = np.sign(target[0] - target_last[0])
+        # flip = np.sign(target[0] - target_last[0])
 
         # Loop over wing kinematics
         p.setJointMotorControlArray(
@@ -189,7 +189,8 @@ class Fly(object):
             # Apply lift & drag forces
             span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingL"],[0,0,0],[0,1,0])[1])
             normal = q2vec(p.getLinkState(self.flyId, self.link_dict["wingL"])[1])
-            
+            flip = -np.sign(np.dot(wlVel, normal))
+
             drag = self.calc_drag(self.aoa[0], wlVel)
             lift = self.calc_lift(self.aoa[0], wlVel, span, flip)
             frot = self.calc_frot(self.aoa_dot[0], wlVel, normal, flip)
@@ -252,6 +253,7 @@ class Fly(object):
             # Apply lift & drag forces
             span = q2vec(worldPlusVector(self.flyId, self.link_dict["wingR"], [0,0,0], [0,1,0])[1])
             normal = q2vec(p.getLinkState(self.flyId, self.link_dict["wingR"])[1])
+            flip = -np.sign(np.dot(wlVel, normal))
             
             drag = self.calc_drag(self.aoa[1], wlVel)
             lift = self.calc_lift(self.aoa[1], wlVel, span, flip)
@@ -295,11 +297,6 @@ class Fly(object):
     @staticmethod
     def calc_drag(aoa, vel):
         vel = np.array(vel)
-        mag = np.linalg.norm(vel)
-        if mag != 0:
-            ang = vel / mag
-        else:
-            ang = vel
 
         cD = 1.464 * np.sin(0.0342*aoa - 1.667) + 2.008
         drag = -cD * vel * np.linalg.norm(vel) * 0.01
@@ -379,16 +376,16 @@ if __name__ == "__main__":
 
     flyStartPos = [0,0,4]
     flyStartOrn = p.getQuaternionFromEuler([0,0,0])
-    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=1, cmd=(0,0,0,0,0,0))
+    fly = Fly(flyStartPos, flyStartOrn, gui=True, apply_forces=0, cmd=(0,0,0,0,0,0))
     aoa = []
-    for i in range(10000):
+    for i in range(200):
         fly.step_simulation()
         # aoa.append(fly.aoa)
 
     # plt.plot(aoa)
     # plt.show()
     
-    f = fly.torques[:,1]
+    # f = fly.torques[:,1]
 
     if mag != 0:
         tag = ("n","p")[int(mag>0)] + str(abs(mag))
@@ -398,5 +395,6 @@ if __name__ == "__main__":
     # npwrite(f,'res_pos/my_{}.csv'.format(tag))
 
     wb = np.arange(fly.forces.shape[0])/100
-    # plt.plot(wb,f)
-    # plt.show()
+    plt.plot(wb,fly.forces)
+    plt.legend(["x","y","z"])
+    plt.show()

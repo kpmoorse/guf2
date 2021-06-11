@@ -7,14 +7,15 @@ g = 9.8
 # Define system matrices (inverted pendulum)
 A = np.array([[0,1], [g,0]])
 B = np.array([[0],[1]])
-C = np.array([[1,0], [0,1]])
-D = np.array([[0], [0]])
+C = np.array([[1,0]])
+D = np.array([[0]])
 
 sys = control.ss(A,B,C,D)
 
 # Synthesize lqr controller
 ctl = control.lqr(sys,[[1,0], [0,1]], [[1]])
 K = np.array(ctl[0])
+print(K)
 sys_ctl = control.ss(A-np.dot(B,K),B,C,D)
 
 # Define simulation parameters
